@@ -1,2 +1,0 @@
-# GroupProjects
-test
