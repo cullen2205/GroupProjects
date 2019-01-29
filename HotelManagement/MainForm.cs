@@ -16,5 +16,15 @@ namespace HotelManagement
         {
             InitializeComponent();
         }
+
+        private void manageEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EmployeeManageForm().Show();
+        }
+
+        private void manageRoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
