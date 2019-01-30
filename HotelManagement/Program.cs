@@ -14,6 +14,8 @@ namespace HotelManagement
         [STAThread]
         static void Main()
         {
+            DatabaseMiscellaneous.CreateIfNotExistsOrInvalid();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());

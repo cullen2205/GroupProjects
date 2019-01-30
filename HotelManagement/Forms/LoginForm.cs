@@ -12,6 +12,7 @@ namespace HotelManagement
 {
     public partial class LoginForm : Form
     {
+
         public LoginForm()
         {
             InitializeComponent();
@@ -19,14 +20,21 @@ namespace HotelManagement
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if(UsernameTextbox.Text.Equals("admin")
-                && PasswordTextbox.Text.Equals("admin"))
+            string username = UsernameTextbox.Text,
+                hashed_password = HashingUtilities.MD5Hash(PasswordTextbox.Text);
+
+            if(LazyWorker.UserExists(username, hashed_password))
             {
                 Hide();
                 MainForm form = new MainForm();
                 form.FormClosed += (s, args) => Close();
                 form.Show();
             }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
