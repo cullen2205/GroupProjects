@@ -21,7 +21,7 @@ namespace HotelManagement
             );
         }
 
-        static string defaultQuery = @"
+        static readonly string defaultQuery = @"
             create table Employees(
                 Id integer primary key autoincrement,
                 Username nvarchar(20) not null,
@@ -31,10 +31,15 @@ namespace HotelManagement
                 FullName nvarchar(50),
                 DateOfBirth date,
                 Sex integer,
-                Address text,
-                Phonenumber text
+                Address nvarchar(200),
+                Phonenumber nvarchar(20)
             );
             
+            create table Services(
+                Id integer primary key autoincrement,
+                
+            );
+
             insert into Employees(Username, Password, IsAdmin) values(
                 'admin', 
                 '21232F297A57A5A743894A0E4A801FC3',
@@ -66,7 +71,6 @@ namespace HotelManagement
             {
                 SQLiteConnection.CreateFile(fileName);
             }
-
 
             SQLiteConnection connection = GetConnection();
             if (!DatabaseIsValid(connection))

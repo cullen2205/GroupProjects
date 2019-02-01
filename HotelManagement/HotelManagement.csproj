@@ -46,6 +46,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FastMember, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.4.1\lib\net461\FastMember.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -71,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\LazyLoader.cs" />
     <Compile Include="Database\LazyWorker.cs" />
     <Compile Include="Database\DatabaseMiscellaneous.cs" />
     <Compile Include="Forms\BillManageForm.cs">
@@ -119,7 +123,7 @@
       <DependentUpon>ServiceManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ConfigUtilities.cs" />
-    <Compile Include="Utilities\HashingUtilities.cs" />
+    <Compile Include="Utilities\StringUtilities.cs" />
     <EmbeddedResource Include="Forms\BillManageForm.resx">
       <DependentUpon>BillManageForm.cs</DependentUpon>
     </EmbeddedResource>

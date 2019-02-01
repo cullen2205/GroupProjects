@@ -7,18 +7,24 @@ using Dapper.Contrib.Extensions;
 
 namespace HotelManagement
 {
-    [Table("Employees")]
     public class Employee
     {
-        public int Id;
-        public string Username;
-        public string Password;
-        public bool IsAdmin;
-        public string RealLifeIdNumber;
-        public string FullName;
-        public DateTime DateOfBirth;
-        public bool Sex;
-        public string Address;
-        public string Phonenumber;
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public bool IsAdmin { get; set; }
+        public string RealLifeIdNumber { get; set; }
+        public string FullName { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public bool Sex { get; set; }
+        public string Address { get; set; }
+        public string Phonenumber { get; set; }
+
+        public override string ToString()
+        {
+            return Id.ToString() + " " + Username + " " + RealLifeIdNumber + " " +
+                FullName + " " + DateOfBirth.ToShortDateString() + " " + 
+                (Sex ? "Nữ" : "Nam") + " " + Address + " " + Phonenumber;
+        }
     }
 }

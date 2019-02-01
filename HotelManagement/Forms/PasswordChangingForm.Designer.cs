@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PasswordTextbox = new System.Windows.Forms.TextBox();
+            this.OldPasswordTextbox = new System.Windows.Forms.TextBox();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.UsernameTextbox = new System.Windows.Forms.TextBox();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NewPasswordTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.CancelButton = new System.Windows.Forms.Button();
+            this.AcceptButton = new System.Windows.Forms.Button();
+            this.LoginInforGroupBox = new System.Windows.Forms.GroupBox();
+            this.RepeatNewPasswordTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.LoginInforGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PasswordTextbox
+            // OldPasswordTextbox
             // 
-            this.PasswordTextbox.Location = new System.Drawing.Point(94, 45);
-            this.PasswordTextbox.Name = "PasswordTextbox";
-            this.PasswordTextbox.PasswordChar = '⏺';
-            this.PasswordTextbox.Size = new System.Drawing.Size(100, 20);
-            this.PasswordTextbox.TabIndex = 7;
+            this.OldPasswordTextbox.Location = new System.Drawing.Point(94, 45);
+            this.OldPasswordTextbox.Name = "OldPasswordTextbox";
+            this.OldPasswordTextbox.PasswordChar = '⏺';
+            this.OldPasswordTextbox.Size = new System.Drawing.Size(100, 20);
+            this.OldPasswordTextbox.TabIndex = 2;
             // 
             // TitleLabel
             // 
@@ -63,10 +63,11 @@
             // 
             // UsernameTextbox
             // 
+            this.UsernameTextbox.Enabled = false;
             this.UsernameTextbox.Location = new System.Drawing.Point(94, 19);
             this.UsernameTextbox.Name = "UsernameTextbox";
             this.UsernameTextbox.Size = new System.Drawing.Size(100, 20);
-            this.UsernameTextbox.TabIndex = 6;
+            this.UsernameTextbox.TabIndex = 1;
             // 
             // PasswordLabel
             // 
@@ -86,13 +87,13 @@
             this.UsernameLabel.TabIndex = 5;
             this.UsernameLabel.Text = "Tên đăng nhập";
             // 
-            // textBox1
+            // NewPasswordTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '⏺';
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
+            this.NewPasswordTextbox.Location = new System.Drawing.Point(94, 71);
+            this.NewPasswordTextbox.Name = "NewPasswordTextbox";
+            this.NewPasswordTextbox.PasswordChar = '⏺';
+            this.NewPasswordTextbox.Size = new System.Drawing.Size(100, 20);
+            this.NewPasswordTextbox.TabIndex = 3;
             // 
             // label1
             // 
@@ -103,50 +104,52 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Mật khẩu mới";
             // 
-            // button1
+            // CancelButton
             // 
-            this.button1.Location = new System.Drawing.Point(38, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Hủy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CancelButton.Location = new System.Drawing.Point(38, 133);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButton.TabIndex = 5;
+            this.CancelButton.Text = "Hủy";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // button2
+            // AcceptButton
             // 
-            this.button2.Location = new System.Drawing.Point(119, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Xác nhận";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AcceptButton.Location = new System.Drawing.Point(119, 133);
+            this.AcceptButton.Name = "AcceptButton";
+            this.AcceptButton.Size = new System.Drawing.Size(75, 23);
+            this.AcceptButton.TabIndex = 6;
+            this.AcceptButton.Text = "Xác nhận";
+            this.AcceptButton.UseVisualStyleBackColor = true;
+            this.AcceptButton.Click += new System.EventHandler(this.AcceptButton_Click);
             // 
-            // groupBox1
+            // LoginInforGroupBox
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.UsernameLabel);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.PasswordLabel);
-            this.groupBox1.Controls.Add(this.UsernameTextbox);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.PasswordTextbox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(205, 168);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin đăng nhập";
+            this.LoginInforGroupBox.Controls.Add(this.RepeatNewPasswordTextbox);
+            this.LoginInforGroupBox.Controls.Add(this.label2);
+            this.LoginInforGroupBox.Controls.Add(this.UsernameLabel);
+            this.LoginInforGroupBox.Controls.Add(this.CancelButton);
+            this.LoginInforGroupBox.Controls.Add(this.AcceptButton);
+            this.LoginInforGroupBox.Controls.Add(this.PasswordLabel);
+            this.LoginInforGroupBox.Controls.Add(this.UsernameTextbox);
+            this.LoginInforGroupBox.Controls.Add(this.NewPasswordTextbox);
+            this.LoginInforGroupBox.Controls.Add(this.OldPasswordTextbox);
+            this.LoginInforGroupBox.Controls.Add(this.label1);
+            this.LoginInforGroupBox.Location = new System.Drawing.Point(12, 53);
+            this.LoginInforGroupBox.Name = "LoginInforGroupBox";
+            this.LoginInforGroupBox.Size = new System.Drawing.Size(205, 168);
+            this.LoginInforGroupBox.TabIndex = 0;
+            this.LoginInforGroupBox.TabStop = false;
+            this.LoginInforGroupBox.Text = "Thông tin đăng nhập";
             // 
-            // textBox2
+            // RepeatNewPasswordTextbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(94, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '⏺';
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 13;
+            this.RepeatNewPasswordTextbox.Location = new System.Drawing.Point(94, 97);
+            this.RepeatNewPasswordTextbox.Name = "RepeatNewPasswordTextbox";
+            this.RepeatNewPasswordTextbox.PasswordChar = '⏺';
+            this.RepeatNewPasswordTextbox.Size = new System.Drawing.Size(100, 20);
+            this.RepeatNewPasswordTextbox.TabIndex = 4;
             // 
             // label2
             // 
@@ -162,12 +165,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(230, 233);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.LoginInforGroupBox);
             this.Controls.Add(this.TitleLabel);
             this.Name = "PasswordChangingForm";
             this.Text = "Đổi mật khẩu";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.LoginInforGroupBox.ResumeLayout(false);
+            this.LoginInforGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,17 +178,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox PasswordTextbox;
+        private System.Windows.Forms.TextBox OldPasswordTextbox;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.TextBox UsernameTextbox;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label UsernameLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NewPasswordTextbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button AcceptButton;
+        private System.Windows.Forms.GroupBox LoginInforGroupBox;
+        private System.Windows.Forms.TextBox RepeatNewPasswordTextbox;
         private System.Windows.Forms.Label label2;
     }
 }

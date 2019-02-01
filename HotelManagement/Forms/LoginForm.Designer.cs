@@ -64,6 +64,7 @@
             this.UsernameTextbox.Name = "UsernameTextbox";
             this.UsernameTextbox.Size = new System.Drawing.Size(100, 20);
             this.UsernameTextbox.TabIndex = 1;
+            this.UsernameTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameTextbox_KeyDown);
             // 
             // LoginButton
             // 
@@ -112,6 +113,7 @@
             this.PasswordTextbox.PasswordChar = '⏺';
             this.PasswordTextbox.Size = new System.Drawing.Size(100, 20);
             this.PasswordTextbox.TabIndex = 2;
+            this.PasswordTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordTextbox_KeyDown);
             // 
             // LoginForm
             // 
@@ -126,6 +128,7 @@
             this.Controls.Add(this.UsernameTextbox);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "LoginForm";
             this.Text = "Khung đăng nhập";
             ((System.ComponentModel.ISupportInitialize)(this.KeyImage)).EndInit();

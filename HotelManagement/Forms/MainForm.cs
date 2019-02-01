@@ -18,6 +18,14 @@ namespace HotelManagement
             InitializeComponent();
         }
 
+        Employee e;
+        public void SetCurrentEmployee(Employee e)
+        {
+            this.e = e;
+            if (!e.IsAdmin)
+                manageEmployeeToolStripMenuItem.Enabled = false;
+        }
+
         private void manageEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new EmployeeManageForm().Show();
@@ -27,26 +35,36 @@ namespace HotelManagement
         {
 
         }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                ConfigUtilities.SetConfig("DatabasePath", openFileDialog1.FileName);
-            }
-        }
-
+        
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(HashingUtilities.MD5Hash("admin"));
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string path = saveFileDialog1.FileName;
-            }
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new PasswordChangingForm(this.e).Show();
+        }
+
+        private void manageServiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ServiceManageForm().Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            (Owner as LoginForm).ResetInput();
+            Owner.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Owner.Close();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
