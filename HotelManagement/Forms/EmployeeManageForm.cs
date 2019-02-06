@@ -16,20 +16,23 @@ namespace HotelManagement
         {
             InitializeComponent();
             LoadAllEmployees();
-            
         }
 
         private void LoadAllEmployees()
         {
-            var list = LazyLoader<Employee>.GetAll();
-            var table = LazyLoader<Employee>.ListToDataTable(list);
-            LazyWorker.SetColumnsOrder(table, 
-                "Id", "Username", "Password", "IsAdmin", 
+            var list = LazyWorker<Employee>.GetAll();
+            var table = LazyWorker<Employee>.ListToDataTable(list);
+            LazyLoader.SetColumnsOrder
+            (
+                table, "Id", "Username", "Password", "IsAdmin", 
                 "RealLifeIdNumber", "FullName", "DateOfBirth", "Sex",
-                "Address", "Phonenumber");
+                "Address", "Phonenumber"
+            );
             table.Columns.Add("Filter");
             foreach(DataRow row in table.Rows)
-                row["Filter"] = LazyLoader<Employee>.DataRowToObject(row).ToString();
+                row["Filter"] = LazyWorker<Employee>
+                    .DataRowToObject(row)
+                    .ToFilteringString();
 
             EmployeeGridView.DataSource = table;
 
@@ -75,6 +78,7 @@ namespace HotelManagement
         private void EmployeeManageForm_Shown(object sender, EventArgs e)
         {
             EmployeeGridView.ClearSelection();
+            EmployeeGridView.RowEnter += EmployeeGridView_RowEnter;
         }
 
         private void LoadOneEmployee(Employee e)
@@ -119,14 +123,14 @@ namespace HotelManagement
 
         private void EmployeeGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if(EmployeeGridView.SelectedRows.Count > 0 
-                && EmployeeGridView.SelectedRows[0] != null)
+            if ((EmployeeGridView.SelectedRows.Count > 0 && EmployeeGridView.SelectedRows[0] != null)
+                || EmployeeGridView.Rows.Count == 1)
             {
-                LoadOneEmployee(
-                    LazyLoader<Employee>.DataRowToObject(
-                        ((DataRowView)EmployeeGridView.SelectedRows[0].DataBoundItem).Row
-                    )
-                );
+                DataRowView rowView = (EmployeeGridView.Rows.Count == 1) 
+                    ? (EmployeeGridView.Rows[0].DataBoundItem as DataRowView) 
+                    : (EmployeeGridView.SelectedRows[0].DataBoundItem as DataRowView);
+
+                LoadOneEmployee(LazyWorker<Employee>.DataRowToObject(rowView.Row));
 
                 SaveButton.Enabled = true;
                 DeleteButton.Enabled = true;
@@ -157,7 +161,7 @@ namespace HotelManagement
             else
             {
                 IdNumericUpdown.Value 
-                    = LazyLoader<Employee>.Insert(FilledDataToEmployee());
+                    = LazyWorker<Employee>.Insert(FilledDataToEmployee());
                 message = "Tạo mới thành công!";
                 LoadAllEmployees();
             }
@@ -166,16 +170,16 @@ namespace HotelManagement
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            LazyLoader<Employee>.Update(FilledDataToEmployee());
+            LazyWorker<Employee>.Update(FilledDataToEmployee());
             LoadAllEmployees();
             MessageBox.Show("Dữ liệu đã được cập nhật thành công!");
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(FormUtilities.ConfirmDeletion())
             {
-                LazyLoader<Employee>.Delete(FilledDataToEmployee());
+                LazyWorker<Employee>.Delete(FilledDataToEmployee());
                 LoadAllEmployees();
                 LoadOneEmployee(new Employee());
             }
@@ -183,94 +187,62 @@ namespace HotelManagement
 
         private void FilterTextbox_TextChanged(object sender, EventArgs e)
         {
-            DataTable table = (DataTable)EmployeeGridView.DataSource;
-            string filterString = "";
-            foreach (string word in 
-                FilterTextbox.Text.Split
-                (
-                    new char[] {' '}, 
-                    StringSplitOptions.RemoveEmptyEntries
-                )
-            )
-            {
-                filterString += string.Format("Filter like '%{0}%' or", word);
-            }
-            table.DefaultView.RowFilter = filterString.Length > 3 
-                ? filterString.Substring(0, filterString.Length - 3)
-                : "";
-            EmployeeGridView.DataSource = table;
-        }
-
-        private void CharacterLengthValidating(Control control, string controlsName,
-            int minLength, int maxLength)
-        {
-            if (string.IsNullOrEmpty(control.Text))
-            {
-                ValidatingErrorProvider.SetError(control,
-                    string.Format("{0} không được để trống.", 
-                    controlsName));
-            }
-            else if (control.Text.Length < minLength)
-            {
-                ValidatingErrorProvider.SetError(control,
-                    string.Format("{0} phải có ít nhất {1} ký tự " +
-                    "và nhỏ hơn hoặc bằng {2} ký tự.", 
-                    controlsName, minLength, maxLength));
-            }
-            else
-            {
-                ValidatingErrorProvider.SetError(control, "");
-            }
+            FormUtilities.FilterDataGridView(EmployeeGridView, FilterTextbox.Text);
         }
 
         private void UsernameTextbox_Validating(object sender, CancelEventArgs e)
         {
-            CharacterLengthValidating(UsernameTextbox, "Tên đăng nhập", 5, 20);
+            FormUtilities.CharacterLengthValidating
+            (
+                ValidatingErrorProvider, 
+                UsernameTextbox, 
+                "Tên đăng nhập", 
+                5, 20
+            );
         }
 
         private void PasswordTextbox_Validating(object sender, CancelEventArgs e)
         {
-            CharacterLengthValidating(PasswordTextbox, "Mật khẩu", 6, 31);
+            FormUtilities.CharacterLengthValidating
+            (
+                ValidatingErrorProvider, 
+                PasswordTextbox, 
+                "Mật khẩu", 
+                6, 31
+            );
         }
 
         private void FullNameTextbox_Validating(object sender, CancelEventArgs e)
         {
-            CharacterLengthValidating(FullNameTextbox, "Họ tên", 1, 50);
+            FormUtilities.CharacterLengthValidating
+            (
+                ValidatingErrorProvider, 
+                FullNameTextbox, 
+                "Họ tên", 
+                1, 50
+            );
         }
 
-        private void NumericCharactersValidating(Control control, string controlsName,
-            int minNumberOfCharacters)
-        {
-            bool emptyString = string.IsNullOrEmpty(control.Text);
-            
-            if (!emptyString && !StringUtilities.IsNumber(control.Text))
-            {
-                ValidatingErrorProvider.SetError(control,
-                    string.Format("{0} phải là một dãy toàn các chữ số.", 
-                    controlsName));
-            }
-            else if(!emptyString && control.Text.Length < minNumberOfCharacters)
-            {
-                ValidatingErrorProvider.SetError(control,
-                    string.Format("{0} phải có ít nhất {1} chữ số.",
-                    controlsName, minNumberOfCharacters));
-            }
-            else
-            {
-                ValidatingErrorProvider.SetError(control, "");
-            }
-        }
+        
 
         private void RealLifeIdNumberTextbox_Validating(object sender, CancelEventArgs e)
         {
-            NumericCharactersValidating(RealLifeIdNumberTextbox, "Số CMND (hoặc CCCD)", 9);
+            FormUtilities.NumericCharactersValidating
+            (
+                ValidatingErrorProvider, 
+                RealLifeIdNumberTextbox, 
+                "Số CMND (hoặc CCCD)", 9
+            );
         }
 
         private void PhonenumberTextbox_Validating(object sender, CancelEventArgs e)
         {
-            NumericCharactersValidating(RealLifeIdNumberTextbox, "Số điện thoại", 8);
+            FormUtilities.NumericCharactersValidating
+            (
+                ValidatingErrorProvider, 
+                RealLifeIdNumberTextbox, 
+                "Số điện thoại", 8
+            );
         }
-
-        //should write some more functions!
     }
 }

@@ -20,11 +20,12 @@ namespace HotelManagement
         public string Address { get; set; }
         public string Phonenumber { get; set; }
 
-        public override string ToString()
+        public string ToFilteringString()
         {
-            return Id.ToString() + " " + Username + " " + RealLifeIdNumber + " " +
-                FullName + " " + DateOfBirth.ToShortDateString() + " " + 
-                (Sex ? "Nữ" : "Nam") + " " + Address + " " + Phonenumber;
+            return string.Format("{0} {1} {2} {3} {4} {5} {6} {7}", 
+                Id, Username, RealLifeIdNumber, FullName, 
+                DateOfBirth.ToShortDateString(), Sex ? "Nữ" : "Nam",
+                Address, Phonenumber);
         }
     }
 }

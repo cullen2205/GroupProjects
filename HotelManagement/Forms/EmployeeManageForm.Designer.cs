@@ -91,7 +91,6 @@
             this.EmployeeGridView.ShowEditingIcon = false;
             this.EmployeeGridView.Size = new System.Drawing.Size(490, 309);
             this.EmployeeGridView.TabIndex = 2;
-            this.EmployeeGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeGridView_RowEnter);
             // 
             // EmployeeListGroupBox
             // 

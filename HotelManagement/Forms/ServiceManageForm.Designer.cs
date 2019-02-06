@@ -28,285 +28,366 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.ServiceListGroupBox = new System.Windows.Forms.GroupBox();
+            this.ServiceFilterTextbox = new System.Windows.Forms.TextBox();
+            this.ServiceFilterLabel = new System.Windows.Forms.Label();
+            this.ServiceGridView = new System.Windows.Forms.DataGridView();
+            this.RoomInforGroupBox = new System.Windows.Forms.GroupBox();
+            this.ResetRoomButton = new System.Windows.Forms.Button();
+            this.DeleteRoomButton = new System.Windows.Forms.Button();
+            this.SaveRoomButton = new System.Windows.Forms.Button();
+            this.NewRoomButton = new System.Windows.Forms.Button();
+            this.RoomNameTextbox = new System.Windows.Forms.TextBox();
+            this.SeparatorLabel = new System.Windows.Forms.Label();
+            this.RoomFilterTextbox = new System.Windows.Forms.TextBox();
+            this.RoomLabel = new System.Windows.Forms.Label();
+            this.RoomComboBox = new System.Windows.Forms.ComboBox();
+            this.RoomFilterLabel = new System.Windows.Forms.Label();
+            this.RoomNameLabel = new System.Windows.Forms.Label();
+            this.ServiceInforGroupBox = new System.Windows.Forms.GroupBox();
+            this.ServicePriceNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ResetServiceButton = new System.Windows.Forms.Button();
+            this.DeleteServiceButton = new System.Windows.Forms.Button();
+            this.ServicePriceLabel = new System.Windows.Forms.Label();
+            this.SaveServiceButton = new System.Windows.Forms.Button();
+            this.ServiceNameTextbox = new System.Windows.Forms.TextBox();
+            this.NewServiceButton = new System.Windows.Forms.Button();
+            this.ServiceNameLabel = new System.Windows.Forms.Label();
+            this.ServiceIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.RoomIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ServiceListGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
+            this.RoomInforGroupBox.SuspendLayout();
+            this.ServiceInforGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicePriceNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomIdNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // TitleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(192, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Quản lý dịch vụ";
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.Location = new System.Drawing.Point(99, 9);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(162, 26);
+            this.TitleLabel.TabIndex = 1;
+            this.TitleLabel.Text = "Quản lý dịch vụ";
             // 
-            // groupBox1
+            // ServiceListGroupBox
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 44);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 279);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách dịch vụ";
+            this.ServiceListGroupBox.Controls.Add(this.ServiceFilterTextbox);
+            this.ServiceListGroupBox.Controls.Add(this.ServiceFilterLabel);
+            this.ServiceListGroupBox.Controls.Add(this.ServiceGridView);
+            this.ServiceListGroupBox.Location = new System.Drawing.Point(12, 44);
+            this.ServiceListGroupBox.Name = "ServiceListGroupBox";
+            this.ServiceListGroupBox.Size = new System.Drawing.Size(333, 264);
+            this.ServiceListGroupBox.TabIndex = 0;
+            this.ServiceListGroupBox.TabStop = false;
+            this.ServiceListGroupBox.Text = "Danh sách dịch vụ";
             // 
-            // textBox1
+            // ServiceFilterTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(49, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.ServiceFilterTextbox.Location = new System.Drawing.Point(49, 19);
+            this.ServiceFilterTextbox.Name = "ServiceFilterTextbox";
+            this.ServiceFilterTextbox.Size = new System.Drawing.Size(100, 20);
+            this.ServiceFilterTextbox.TabIndex = 1;
+            this.ServiceFilterTextbox.TextChanged += new System.EventHandler(this.ServiceFilterTextbox_TextChanged);
             // 
-            // label2
+            // ServiceFilterLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Bộ lọc";
+            this.ServiceFilterLabel.AutoSize = true;
+            this.ServiceFilterLabel.Location = new System.Drawing.Point(6, 22);
+            this.ServiceFilterLabel.Name = "ServiceFilterLabel";
+            this.ServiceFilterLabel.Size = new System.Drawing.Size(37, 13);
+            this.ServiceFilterLabel.TabIndex = 2;
+            this.ServiceFilterLabel.Text = "Bộ lọc";
             // 
-            // dataGridView1
+            // ServicesGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(459, 223);
-            this.dataGridView1.TabIndex = 1;
+            this.ServiceGridView.AllowUserToAddRows = false;
+            this.ServiceGridView.AllowUserToDeleteRows = false;
+            this.ServiceGridView.AllowUserToResizeRows = false;
+            this.ServiceGridView.Location = new System.Drawing.Point(6, 45);
+            this.ServiceGridView.MultiSelect = false;
+            this.ServiceGridView.Name = "ServicesGridView";
+            this.ServiceGridView.ReadOnly = true;
+            this.ServiceGridView.RowHeadersVisible = false;
+            this.ServiceGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ServiceGridView.Size = new System.Drawing.Size(319, 210);
+            this.ServiceGridView.TabIndex = 2;
             // 
-            // Column1
+            // RoomInforGroupBox
             // 
-            this.Column1.HeaderText = "STT";
-            this.Column1.Name = "Column1";
+            this.RoomInforGroupBox.Controls.Add(this.ResetRoomButton);
+            this.RoomInforGroupBox.Controls.Add(this.DeleteRoomButton);
+            this.RoomInforGroupBox.Controls.Add(this.SaveRoomButton);
+            this.RoomInforGroupBox.Controls.Add(this.NewRoomButton);
+            this.RoomInforGroupBox.Controls.Add(this.RoomNameTextbox);
+            this.RoomInforGroupBox.Controls.Add(this.SeparatorLabel);
+            this.RoomInforGroupBox.Controls.Add(this.RoomFilterTextbox);
+            this.RoomInforGroupBox.Controls.Add(this.RoomLabel);
+            this.RoomInforGroupBox.Controls.Add(this.RoomComboBox);
+            this.RoomInforGroupBox.Controls.Add(this.RoomFilterLabel);
+            this.RoomInforGroupBox.Controls.Add(this.RoomNameLabel);
+            this.RoomInforGroupBox.Location = new System.Drawing.Point(351, 44);
+            this.RoomInforGroupBox.Name = "RoomInforGroupBox";
+            this.RoomInforGroupBox.Size = new System.Drawing.Size(211, 151);
+            this.RoomInforGroupBox.TabIndex = 1;
+            this.RoomInforGroupBox.TabStop = false;
+            this.RoomInforGroupBox.Text = "Thông tin phòng";
             // 
-            // Column2
+            // ResetRoomButton
             // 
-            this.Column2.HeaderText = "Tên phòng";
-            this.Column2.Name = "Column2";
+            this.ResetRoomButton.Location = new System.Drawing.Point(9, 120);
+            this.ResetRoomButton.Name = "ResetRoomButton";
+            this.ResetRoomButton.Size = new System.Drawing.Size(50, 23);
+            this.ResetRoomButton.TabIndex = 6;
+            this.ResetRoomButton.Text = "Đặt lại";
+            this.ResetRoomButton.UseVisualStyleBackColor = true;
             // 
-            // Column3
+            // DeleteRoomButton
             // 
-            this.Column3.HeaderText = "Tên dịch vụ";
-            this.Column3.Name = "Column3";
+            this.DeleteRoomButton.Enabled = false;
+            this.DeleteRoomButton.Location = new System.Drawing.Point(166, 120);
+            this.DeleteRoomButton.Name = "DeleteRoomButton";
+            this.DeleteRoomButton.Size = new System.Drawing.Size(39, 23);
+            this.DeleteRoomButton.TabIndex = 9;
+            this.DeleteRoomButton.Text = "Xóa";
+            this.DeleteRoomButton.UseVisualStyleBackColor = true;
             // 
-            // Column4
+            // SaveRoomButton
             // 
-            this.Column4.HeaderText = "Giá tiền";
-            this.Column4.Name = "Column4";
+            this.SaveRoomButton.Enabled = false;
+            this.SaveRoomButton.Location = new System.Drawing.Point(124, 120);
+            this.SaveRoomButton.Name = "SaveRoomButton";
+            this.SaveRoomButton.Size = new System.Drawing.Size(38, 23);
+            this.SaveRoomButton.TabIndex = 8;
+            this.SaveRoomButton.Text = "Lưu";
+            this.SaveRoomButton.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // NewRoomButton
             // 
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(490, 44);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(211, 156);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thông tin phòng";
+            this.NewRoomButton.Location = new System.Drawing.Point(63, 120);
+            this.NewRoomButton.Name = "NewRoomButton";
+            this.NewRoomButton.Size = new System.Drawing.Size(55, 23);
+            this.NewRoomButton.TabIndex = 7;
+            this.NewRoomButton.Text = "Tạo mới";
+            this.NewRoomButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // RoomNameTextbox
             // 
-            this.button3.Location = new System.Drawing.Point(130, 127);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Tạo mới";
-            this.button3.UseVisualStyleBackColor = true;
+            this.RoomNameTextbox.Location = new System.Drawing.Point(76, 90);
+            this.RoomNameTextbox.Name = "RoomNameTextbox";
+            this.RoomNameTextbox.Size = new System.Drawing.Size(100, 20);
+            this.RoomNameTextbox.TabIndex = 5;
             // 
-            // textBox3
+            // SeparatorLabel
             // 
-            this.textBox3.Location = new System.Drawing.Point(76, 90);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.SeparatorLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.SeparatorLabel.Location = new System.Drawing.Point(31, 77);
+            this.SeparatorLabel.Name = "SeparatorLabel";
+            this.SeparatorLabel.Size = new System.Drawing.Size(140, 2);
+            this.SeparatorLabel.TabIndex = 8;
             // 
-            // label9
+            // RoomFilterTextbox
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Location = new System.Drawing.Point(31, 77);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 2);
-            this.label9.TabIndex = 8;
+            this.RoomFilterTextbox.Location = new System.Drawing.Point(76, 19);
+            this.RoomFilterTextbox.Name = "RoomFilterTextbox";
+            this.RoomFilterTextbox.Size = new System.Drawing.Size(100, 20);
+            this.RoomFilterTextbox.TabIndex = 3;
             // 
-            // textBox2
+            // RoomLabel
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.RoomLabel.AutoSize = true;
+            this.RoomLabel.Location = new System.Drawing.Point(6, 48);
+            this.RoomLabel.Name = "RoomLabel";
+            this.RoomLabel.Size = new System.Drawing.Size(38, 13);
+            this.RoomLabel.TabIndex = 4;
+            this.RoomLabel.Text = "Phòng";
             // 
-            // label8
+            // RoomComboBox
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Phòng";
+            this.RoomComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.RoomComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.RoomComboBox.FormattingEnabled = true;
+            this.RoomComboBox.Location = new System.Drawing.Point(76, 45);
+            this.RoomComboBox.Name = "RoomComboBox";
+            this.RoomComboBox.Size = new System.Drawing.Size(121, 21);
+            this.RoomComboBox.TabIndex = 4;
             // 
-            // comboBox2
+            // RoomFilterLabel
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(76, 45);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 6;
+            this.RoomFilterLabel.AutoSize = true;
+            this.RoomFilterLabel.Location = new System.Drawing.Point(6, 22);
+            this.RoomFilterLabel.Name = "RoomFilterLabel";
+            this.RoomFilterLabel.Size = new System.Drawing.Size(37, 13);
+            this.RoomFilterLabel.TabIndex = 2;
+            this.RoomFilterLabel.Text = "Bộ lọc";
             // 
-            // label7
+            // RoomNameLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Bộ lọc";
+            this.RoomNameLabel.AutoSize = true;
+            this.RoomNameLabel.Location = new System.Drawing.Point(6, 93);
+            this.RoomNameLabel.Name = "RoomNameLabel";
+            this.RoomNameLabel.Size = new System.Drawing.Size(59, 13);
+            this.RoomNameLabel.TabIndex = 0;
+            this.RoomNameLabel.Text = "Tên phòng";
             // 
-            // label5
+            // ServiceInforGroupBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tên phòng";
+            this.ServiceInforGroupBox.Controls.Add(this.ServicePriceNumericUpDown);
+            this.ServiceInforGroupBox.Controls.Add(this.ResetServiceButton);
+            this.ServiceInforGroupBox.Controls.Add(this.DeleteServiceButton);
+            this.ServiceInforGroupBox.Controls.Add(this.ServicePriceLabel);
+            this.ServiceInforGroupBox.Controls.Add(this.SaveServiceButton);
+            this.ServiceInforGroupBox.Controls.Add(this.ServiceNameTextbox);
+            this.ServiceInforGroupBox.Controls.Add(this.NewServiceButton);
+            this.ServiceInforGroupBox.Controls.Add(this.ServiceNameLabel);
+            this.ServiceInforGroupBox.Location = new System.Drawing.Point(351, 201);
+            this.ServiceInforGroupBox.Name = "ServiceInforGroupBox";
+            this.ServiceInforGroupBox.Size = new System.Drawing.Size(211, 107);
+            this.ServiceInforGroupBox.TabIndex = 2;
+            this.ServiceInforGroupBox.TabStop = false;
+            this.ServiceInforGroupBox.Text = "Thông tin dịch vụ";
             // 
-            // groupBox2
+            // ServicePriceNumericUpDown
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(490, 206);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(211, 117);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin dịch vụ";
+            this.ServicePriceNumericUpDown.Increment = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.ServicePriceNumericUpDown.Location = new System.Drawing.Point(76, 46);
+            this.ServicePriceNumericUpDown.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.ServicePriceNumericUpDown.Name = "ServicePriceNumericUpDown";
+            this.ServicePriceNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.ServicePriceNumericUpDown.TabIndex = 11;
+            this.ServicePriceNumericUpDown.ThousandsSeparator = true;
+            this.ServicePriceNumericUpDown.Value = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
             // 
-            // button1
+            // ResetServiceButton
             // 
-            this.button1.Location = new System.Drawing.Point(130, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Tạo mới";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ResetServiceButton.Location = new System.Drawing.Point(7, 75);
+            this.ResetServiceButton.Name = "ResetServiceButton";
+            this.ResetServiceButton.Size = new System.Drawing.Size(50, 23);
+            this.ResetServiceButton.TabIndex = 12;
+            this.ResetServiceButton.Text = "Đặt lại";
+            this.ResetServiceButton.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // DeleteServiceButton
             // 
-            this.textBox4.Location = new System.Drawing.Point(76, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.DeleteServiceButton.Enabled = false;
+            this.DeleteServiceButton.Location = new System.Drawing.Point(166, 75);
+            this.DeleteServiceButton.Name = "DeleteServiceButton";
+            this.DeleteServiceButton.Size = new System.Drawing.Size(39, 23);
+            this.DeleteServiceButton.TabIndex = 15;
+            this.DeleteServiceButton.Text = "Xóa";
+            this.DeleteServiceButton.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // ServicePriceLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Tên dịch vụ";
+            this.ServicePriceLabel.AutoSize = true;
+            this.ServicePriceLabel.Location = new System.Drawing.Point(6, 48);
+            this.ServicePriceLabel.Name = "ServicePriceLabel";
+            this.ServicePriceLabel.Size = new System.Drawing.Size(43, 13);
+            this.ServicePriceLabel.TabIndex = 13;
+            this.ServicePriceLabel.Text = "Giá tiền";
             // 
-            // textBox5
+            // SaveServiceButton
             // 
-            this.textBox5.Location = new System.Drawing.Point(76, 45);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 14;
+            this.SaveServiceButton.Enabled = false;
+            this.SaveServiceButton.Location = new System.Drawing.Point(124, 75);
+            this.SaveServiceButton.Name = "SaveServiceButton";
+            this.SaveServiceButton.Size = new System.Drawing.Size(38, 23);
+            this.SaveServiceButton.TabIndex = 14;
+            this.SaveServiceButton.Text = "Lưu";
+            this.SaveServiceButton.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // ServiceNameTextbox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Giá tiền";
+            this.ServiceNameTextbox.Location = new System.Drawing.Point(76, 19);
+            this.ServiceNameTextbox.Name = "ServiceNameTextbox";
+            this.ServiceNameTextbox.Size = new System.Drawing.Size(100, 20);
+            this.ServiceNameTextbox.TabIndex = 10;
             // 
-            // button2
+            // NewServiceButton
             // 
-            this.button2.Location = new System.Drawing.Point(49, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.NewServiceButton.Location = new System.Drawing.Point(63, 75);
+            this.NewServiceButton.Name = "NewServiceButton";
+            this.NewServiceButton.Size = new System.Drawing.Size(55, 23);
+            this.NewServiceButton.TabIndex = 13;
+            this.NewServiceButton.Text = "Tạo mới";
+            this.NewServiceButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // ServiceNameLabel
             // 
-            this.button4.Location = new System.Drawing.Point(49, 83);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Lưu";
-            this.button4.UseVisualStyleBackColor = true;
+            this.ServiceNameLabel.AutoSize = true;
+            this.ServiceNameLabel.Location = new System.Drawing.Point(6, 22);
+            this.ServiceNameLabel.Name = "ServiceNameLabel";
+            this.ServiceNameLabel.Size = new System.Drawing.Size(64, 13);
+            this.ServiceNameLabel.TabIndex = 0;
+            this.ServiceNameLabel.Text = "Tên dịch vụ";
+            // 
+            // ServiceIdNumericUpDown
+            // 
+            this.ServiceIdNumericUpDown.Location = new System.Drawing.Point(301, 15);
+            this.ServiceIdNumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.ServiceIdNumericUpDown.Name = "ServiceIdNumericUpDown";
+            this.ServiceIdNumericUpDown.Size = new System.Drawing.Size(0, 20);
+            this.ServiceIdNumericUpDown.TabIndex = 3;
+            this.ServiceIdNumericUpDown.TabStop = false;
+            // 
+            // RoomIdNumericUpDown
+            // 
+            this.RoomIdNumericUpDown.Location = new System.Drawing.Point(375, 16);
+            this.RoomIdNumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.RoomIdNumericUpDown.Name = "RoomIdNumericUpDown";
+            this.RoomIdNumericUpDown.Size = new System.Drawing.Size(0, 20);
+            this.RoomIdNumericUpDown.TabIndex = 4;
+            this.RoomIdNumericUpDown.TabStop = false;
             // 
             // ServiceManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 332);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(574, 320);
+            this.Controls.Add(this.RoomIdNumericUpDown);
+            this.Controls.Add(this.ServiceIdNumericUpDown);
+            this.Controls.Add(this.ServiceInforGroupBox);
+            this.Controls.Add(this.RoomInforGroupBox);
+            this.Controls.Add(this.ServiceListGroupBox);
+            this.Controls.Add(this.TitleLabel);
             this.Name = "ServiceManageForm";
             this.Text = "ServiceManageForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Shown += new System.EventHandler(this.ServiceManageForm_Shown);
+            this.ServiceListGroupBox.ResumeLayout(false);
+            this.ServiceListGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).EndInit();
+            this.RoomInforGroupBox.ResumeLayout(false);
+            this.RoomInforGroupBox.PerformLayout();
+            this.ServiceInforGroupBox.ResumeLayout(false);
+            this.ServiceInforGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicePriceNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomIdNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,31 +395,33 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.GroupBox ServiceListGroupBox;
+        private System.Windows.Forms.TextBox ServiceFilterTextbox;
+        private System.Windows.Forms.Label ServiceFilterLabel;
+        private System.Windows.Forms.DataGridView ServiceGridView;
+        private System.Windows.Forms.GroupBox RoomInforGroupBox;
+        private System.Windows.Forms.TextBox RoomNameTextbox;
+        private System.Windows.Forms.Label SeparatorLabel;
+        private System.Windows.Forms.TextBox RoomFilterTextbox;
+        private System.Windows.Forms.Label RoomLabel;
+        private System.Windows.Forms.ComboBox RoomComboBox;
+        private System.Windows.Forms.Label RoomFilterLabel;
+        private System.Windows.Forms.Label RoomNameLabel;
+        private System.Windows.Forms.GroupBox ServiceInforGroupBox;
+        private System.Windows.Forms.Label ServicePriceLabel;
+        private System.Windows.Forms.TextBox ServiceNameTextbox;
+        private System.Windows.Forms.Label ServiceNameLabel;
+        private System.Windows.Forms.Button DeleteRoomButton;
+        private System.Windows.Forms.Button SaveRoomButton;
+        private System.Windows.Forms.Button NewRoomButton;
+        private System.Windows.Forms.Button ResetServiceButton;
+        private System.Windows.Forms.Button DeleteServiceButton;
+        private System.Windows.Forms.Button SaveServiceButton;
+        private System.Windows.Forms.Button NewServiceButton;
+        private System.Windows.Forms.Button ResetRoomButton;
+        private System.Windows.Forms.NumericUpDown ServicePriceNumericUpDown;
+        private System.Windows.Forms.NumericUpDown ServiceIdNumericUpDown;
+        private System.Windows.Forms.NumericUpDown RoomIdNumericUpDown;
     }
 }

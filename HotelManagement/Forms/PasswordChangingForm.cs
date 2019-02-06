@@ -22,7 +22,7 @@ namespace HotelManagement
         private void LoadEmployee(Employee emp)
         {
             this.emp = emp;
-            this.emp = LazyLoader<Employee>.Get(emp.Id);
+            this.emp = LazyWorker<Employee>.Get(emp.Id);
             UsernameTextbox.Text = this.emp.Username;
         }
 
@@ -33,7 +33,7 @@ namespace HotelManagement
                 if(NewPasswordTextbox.Text == RepeatNewPasswordTextbox.Text)
                 {
                     emp.Password = StringUtilities.MD5Hash(NewPasswordTextbox.Text);
-                    LazyLoader<Employee>.Update(emp);
+                    LazyWorker<Employee>.Update(emp);
                     MessageBox.Show("Đổi mật khẩu thành công!");
                 }
                 else

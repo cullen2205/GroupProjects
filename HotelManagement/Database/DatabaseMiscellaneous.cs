@@ -21,29 +21,52 @@ namespace HotelManagement
             );
         }
 
-        static readonly string defaultQuery = @"
-            create table Employees(
-                Id integer primary key autoincrement,
-                Username nvarchar(20) not null,
-                Password char(32) not null, 
-                IsAdmin integer not null, 
-                RealLifeIdNumber char(20), 
-                FullName nvarchar(50),
-                DateOfBirth date,
-                Sex integer,
-                Address nvarchar(200),
-                Phonenumber nvarchar(20)
-            );
-            
-            create table Services(
-                Id integer primary key autoincrement,
-                
-            );
+        const string defaultQuery = @"
+create table if not exists Employees
+(
+	Id integer primary key autoincrement,
+	Username nvarchar(20) not null,
+	Password char(32) not null, 
+	IsAdmin integer not null, 
+	RealLifeIdNumber char(20), 
+	FullName nvarchar(50),
+	DateOfBirth date,
+	Sex integer,
+	Address nvarchar(200),
+	Phonenumber nvarchar(20)
+);
 
-            insert into Employees(Username, Password, IsAdmin) values(
-                'admin', 
-                '21232F297A57A5A743894A0E4A801FC3',
-                1);
+insert into Employees(Username, Password, IsAdmin) values
+	('admin', '21232F297A57A5A743894A0E4A801FC3', 1);
+
+create table if not exists Rooms
+(
+	Id integer primary key autoincrement,
+	RoomName nvarchar(30)
+);
+
+insert into Rooms(RoomName) values 
+	('Chung cho tất cả các phòng.'),
+	('Phòng 101'),
+	('Phòng 13'),
+	('Phòng 420'),
+	('Phòng 4953');
+
+create table if not exists Services
+(
+	Id integer primary key autoincrement,
+	RoomId int,
+	ServiceName nvarchar(50),
+	Price integer,
+	foreign key (RoomId) references Rooms(Id)
+);
+
+insert into Services(RoomId, ServiceName, Price) values 
+	(1, 'Dọn dẹp', 10000),
+	(2, 'Cho thuê', 200000),
+	(3, 'Cho thuê', 300000),
+	(4, 'Cho thuê', 400000),
+	(5, 'Cho thuê', 500000);
         ";
 
         static bool TableExists(String tableName, SQLiteConnection connection)
@@ -56,7 +79,7 @@ namespace HotelManagement
 
         public static bool DatabaseIsValid(SQLiteConnection connection)
         {
-            string[] tableNames = { "Employees" };
+            string[] tableNames = { "Employees", "Rooms", "Services" };
             foreach(string tableName in tableNames)
                 if (!TableExists(tableName, connection))
                     return false;

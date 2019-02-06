@@ -40,7 +40,7 @@ namespace HotelManagement
             string username = UsernameTextbox.Text,
                 hashed_password = StringUtilities.MD5Hash(PasswordTextbox.Text);   
 
-            Employee emp = LazyWorker.GetEmployee(username, hashed_password);
+            Employee emp = LazyLoader.GetEmployee(username, hashed_password);
             if (emp != null && emp.Id > 0)
             {
                 Hide();
