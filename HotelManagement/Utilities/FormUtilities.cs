@@ -10,6 +10,24 @@ namespace HotelManagement
 {
     public static class FormUtilities
     {
+        public static void SetRowIndex
+        (
+            DataGridView gridView, 
+            int index = Int32.MaxValue
+        )
+        {
+            if (gridView.Rows.Count > 0)
+            {
+                if (index < 0)
+                    index = 0;
+                else if (index >= gridView.Rows.Count)
+                    index = gridView.Rows.Count - 1;
+
+                gridView.Rows[index].Selected = true;
+                gridView.Rows[index].Cells["ServiceName"].Selected = true;
+            }
+        }
+
         public static void FilterDataGridView(DataGridView gridView, string text)
         {
             gridView.ClearSelection();
@@ -66,7 +84,7 @@ namespace HotelManagement
 
         public static void NotifySuccess()
         {
-            MessageBox.Show("Tạo thành công!", "Thành công", 
+            MessageBox.Show("Thao tác thành công!", "Thành công", 
                 MessageBoxButtons.OK, MessageBoxIcon.Information, 
                 MessageBoxDefaultButton.Button1);
         }
@@ -75,7 +93,7 @@ namespace HotelManagement
         {
             return (MessageBox.Show("Bạn có chắc chắn muốn xóa?" + Environment.NewLine
                 + "Một khi đã xóa thì dữ liệu sẽ không lấy lại được!", "Xóa dữ liệu",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                 MessageBoxDefaultButton.Button1) == DialogResult.Yes);
         }
     }

@@ -27,9 +27,9 @@ namespace HotelManagement
                 new { username = username, hashed_password = hashed_password });
         }
 
-        public static List<Service> GetAllServices()
+        public static List<ServiceDisplay> GetAllServices()
         {
-            return connection.Query<Service, Room, Service>(
+            return connection.Query<ServiceDisplay, Room, ServiceDisplay>(
                 "select s.Id, s.ServiceName, s.Price, r.Id, r.RoomName " +
                 "from Services s left join Rooms r on s.RoomId = r.Id", 
                 (service, room) => 

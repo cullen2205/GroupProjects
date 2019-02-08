@@ -22,17 +22,16 @@ namespace HotelManagement
         private void LoadAllServices()
         {
             var list = LazyLoader.GetAllServices();
-            var table = LazyWorker<Service>.ListToDataTable(list);
+            var table = LazyWorker<ServiceDisplay>.ListToDataTable(list);
             
             LazyLoader.SetColumnsOrder(table, "Id", "ServiceName", "Price", "BelongToRoom");
 
             table.Columns.Add("Filter");
             foreach(DataRow row in table.Rows)
-                row["Filter"] = LazyWorker<Service>
+                row["Filter"] = LazyWorker<ServiceDisplay>
                     .DataRowToObject(row)
                     .ToFilteringString();
             
-
             ServiceGridView.DataSource = table;
             ServiceGridView.Columns["Id"].Visible = false;
 
@@ -50,24 +49,34 @@ namespace HotelManagement
             ServiceGridView.Columns["Filter"].Visible = false;
         }
 
-        private void LoadAllRooms()
+        private void LoadAllRooms(int index = 0)
         {
             var list = LazyWorker<Room>.GetAll();
-            RoomComboBox.DataSource = list;
             list.Insert(0, new Room()
             {
                 Id = 0,
                 RoomName = ""
             });
+
+            RoomComboBox.DataSource = list;
             RoomComboBox.DisplayMember = "RoomName";
             RoomComboBox.ValueMember = "Id";
+
+            if (index < 0)
+                index = 0;
+            else if (index >= RoomComboBox.Items.Count)
+                index = RoomComboBox.Items.Count - 1;
+
+            RoomComboBox.SelectedIndex = index;
         }
 
-        private void LoadOneService(Service s)
+        private void LoadOneService(ServiceDisplay s)
         {
             ServiceIdNumericUpDown.Value = s.Id;
-            RoomComboBox.SelectedValue = s.BelongToRoom.Id;
-            RoomNameTextbox.Text = s.BelongToRoom.RoomName;
+            RoomComboBox.SelectedValue 
+                = s.BelongToRoom != null 
+                    ? s.BelongToRoom.Id 
+                    : 0;
             ServiceNameTextbox.Text = s.ServiceName;
             ServicePriceNumericUpDown.Value = s.Price;
         }
@@ -81,8 +90,10 @@ namespace HotelManagement
                     ? (ServiceGridView.Rows[0].DataBoundItem as DataRowView)
                     : (ServiceGridView.SelectedRows[0].DataBoundItem as DataRowView);
 
-                LoadOneService(LazyWorker<Service>.DataRowToObject(rowView.Row));
-                RoomFilterTextbox.Text = "";
+                LoadOneService(LazyWorker<ServiceDisplay>.DataRowToObject(rowView.Row));
+
+                SaveServiceButton.Enabled = true;
+                DeleteServiceButton.Enabled = true;
             }
         }
 
@@ -94,6 +105,117 @@ namespace HotelManagement
         private void ServiceFilterTextbox_TextChanged(object sender, EventArgs e)
         {
             FormUtilities.FilterDataGridView(ServiceGridView, ServiceFilterTextbox.Text);
+        }
+
+        private void RoomComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Room r = RoomComboBox.SelectedItem as Room;
+            RoomIdNumericUpDown.Value = r.Id;
+            RoomNameTextbox.Text = r.RoomName;
+
+            SaveRoomButton.Enabled 
+                = DeleteRoomButton.Enabled 
+                = (r.Id != 0);
+        }
+
+        private void ResetRoomButton_Click(object sender, EventArgs e)
+        {
+            RoomComboBox.SelectedIndex = 0;
+            RoomNameTextbox.Text = "";
+        }
+
+        private Room FilledDataToRoom()
+        {
+            return new Room()
+            {
+                Id = Convert.ToInt32(RoomIdNumericUpDown.Value),
+                RoomName = RoomNameTextbox.Text
+            };
+        }
+
+        private ServiceModel FilledDataToService()
+        {
+            int? RoomId = Convert.ToInt32(RoomIdNumericUpDown.Value);
+            return new ServiceModel()
+            {
+                Id = Convert.ToInt32(ServiceIdNumericUpDown.Value),
+                RoomId = (RoomId == 0) ? null : RoomId,
+                ServiceName = ServiceNameTextbox.Text,
+                Price = Convert.ToInt32(ServicePriceNumericUpDown.Value)
+            };
+        }
+
+        private void NewRoomButton_Click(object sender, EventArgs e)
+        {
+            RoomIdNumericUpDown.Value 
+                = LazyWorker<Room>.Insert(FilledDataToRoom());
+            LoadAllRooms(Int32.MaxValue);
+            FormUtilities.NotifySuccess();
+        }
+
+        private void SaveRoomButton_Click(object sender, EventArgs e)
+        {
+            if (LazyWorker<Room>.Update(FilledDataToRoom()))
+            {
+                FormUtilities.NotifySuccess();
+                LoadAllRooms(RoomComboBox.SelectedIndex);
+            }
+                
+        }
+
+        private void DeleteRoomButton_Click(object sender, EventArgs e)
+        {
+            if (FormUtilities.ConfirmDeletion())
+            {
+                LazyWorker<Room>.Delete(FilledDataToRoom());
+                LoadAllRooms();
+            }
+        }
+
+        private void ResetServiceButton_Click(object sender, EventArgs e)
+        {
+            ResetRoomButton_Click(sender, e);
+
+            ServiceNameTextbox.Text = "";
+            ServicePriceNumericUpDown.Value = 50000;
+            ServiceFilterTextbox.Text = "";
+            ServiceGridView.ClearSelection();
+
+            DeleteServiceButton.Enabled = false;
+            SaveServiceButton.Enabled = false;
+        }
+
+        private void NewServiceButton_Click(object sender, EventArgs e)
+        {
+            ServiceIdNumericUpDown.Value = LazyWorker<ServiceModel>.Insert(FilledDataToService());
+            LoadAllServices();
+            FormUtilities.SetRowIndex(ServiceGridView);
+            SaveServiceButton.Enabled = true;
+            DeleteServiceButton.Enabled = true;
+            FormUtilities.NotifySuccess();
+        }
+
+        private void SaveServiceButton_Click(object sender, EventArgs e)
+        {
+            if(LazyWorker<ServiceModel>.Update(FilledDataToService()))
+            {
+                int index = ServiceGridView.SelectedRows[0].Index;
+                LoadAllServices();
+                FormUtilities.SetRowIndex(ServiceGridView, index);
+
+                FormUtilities.NotifySuccess();
+            }
+        }
+
+        private void DeleteServiceButton_Click(object sender, EventArgs e)
+        {
+            if (FormUtilities.ConfirmDeletion() &&
+                LazyWorker<ServiceModel>.Delete(FilledDataToService()))
+            {
+                LoadAllRooms();
+                ResetServiceButton_Click(sender, e);
+                FormUtilities.NotifySuccess();
+            }
         }
     }
 }
