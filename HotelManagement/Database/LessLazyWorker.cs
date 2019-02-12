@@ -10,21 +10,21 @@ using System.Data;
 
 namespace HotelManagement
 {
-    public static class LazyLoader
+    public static class LessLazyWorker
     {
         static SQLiteConnection connection = DatabaseMiscellaneous.GetConnection();
         public static bool UserExists(string username, string hashed_password)
         {
             return (connection.ExecuteScalar<bool>("select count(1) from Employees " +
                 "where Username = @username and Password = @hashed_password",
-                new { username = username, hashed_password = hashed_password })) ;
+                new { username, hashed_password })) ;
         }
 
         public static Employee GetEmployee(string username, string hashed_password)
         {
             return connection.QueryFirstOrDefault<Employee>("select Id, IsAdmin from Employees " + 
                 "where Username = @username and Password = @hashed_password",
-                new { username = username, hashed_password = hashed_password });
+                new { username, hashed_password });
         }
 
         public static List<ServiceDisplay> GetAllServices()

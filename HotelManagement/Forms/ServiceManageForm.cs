@@ -21,18 +21,13 @@ namespace HotelManagement
 
         private void LoadAllServices()
         {
-            var list = LazyLoader.GetAllServices();
-            var table = LazyWorker<ServiceDisplay>.ListToDataTable(list);
-            
-            LazyLoader.SetColumnsOrder(table, "Id", "ServiceName", "Price", "BelongToRoom");
+            LazyWorker<ServiceDisplay>.LoadAllToGridView
+            (
+                ServiceGridView, 
+                new string[] { "Id", "ServiceName", "Price", "BelongToRoom" },
+                LessLazyWorker.GetAllServices()
+            );
 
-            table.Columns.Add("Filter");
-            foreach(DataRow row in table.Rows)
-                row["Filter"] = LazyWorker<ServiceDisplay>
-                    .DataRowToObject(row)
-                    .ToFilteringString();
-            
-            ServiceGridView.DataSource = table;
             ServiceGridView.Columns["Id"].Visible = false;
 
             ServiceGridView.Columns["ServiceName"].HeaderText = "Tên dịch vụ";
@@ -216,6 +211,26 @@ namespace HotelManagement
                 ResetServiceButton_Click(sender, e);
                 FormUtilities.NotifySuccess();
             }
+        }
+
+        private void RoomNameTextbox_Validating(object sender, CancelEventArgs e)
+        {
+            FormUtilities.CharacterLengthValidating
+            (
+                ValidatingErrorProvider, 
+                RoomNameTextbox,
+                "Tên phòng", 1, 30
+            );
+        }
+
+        private void ServiceNameTextbox_Validating(object sender, CancelEventArgs e)
+        {
+            FormUtilities.CharacterLengthValidating
+            (
+                ValidatingErrorProvider,
+                RoomNameTextbox,
+                "Tên dịch vụ", 1, 50
+            );
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.ServiceListGroupBox = new System.Windows.Forms.GroupBox();
             this.ServiceFilterTextbox = new System.Windows.Forms.TextBox();
@@ -54,6 +55,7 @@
             this.ServiceNameLabel = new System.Windows.Forms.Label();
             this.ServiceIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.RoomIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ValidatingErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ServiceListGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
             this.RoomInforGroupBox.SuspendLayout();
@@ -61,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ServicePriceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoomIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValidatingErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -182,6 +185,7 @@
             this.RoomNameTextbox.Name = "RoomNameTextbox";
             this.RoomNameTextbox.Size = new System.Drawing.Size(100, 20);
             this.RoomNameTextbox.TabIndex = 5;
+            this.RoomNameTextbox.Validating += new System.ComponentModel.CancelEventHandler(this.RoomNameTextbox_Validating);
             // 
             // SeparatorLabel
             // 
@@ -307,6 +311,7 @@
             this.ServiceNameTextbox.Name = "ServiceNameTextbox";
             this.ServiceNameTextbox.Size = new System.Drawing.Size(100, 20);
             this.ServiceNameTextbox.TabIndex = 10;
+            this.ServiceNameTextbox.Validating += new System.ComponentModel.CancelEventHandler(this.ServiceNameTextbox_Validating);
             // 
             // NewServiceButton
             // 
@@ -353,6 +358,10 @@
             this.RoomIdNumericUpDown.TabIndex = 4;
             this.RoomIdNumericUpDown.TabStop = false;
             // 
+            // ValidatingErrorProvider
+            // 
+            this.ValidatingErrorProvider.ContainerControl = this;
+            // 
             // ServiceManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ServicePriceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoomIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValidatingErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,5 +420,6 @@
         private System.Windows.Forms.NumericUpDown ServicePriceNumericUpDown;
         private System.Windows.Forms.NumericUpDown ServiceIdNumericUpDown;
         private System.Windows.Forms.NumericUpDown RoomIdNumericUpDown;
+        private System.Windows.Forms.ErrorProvider ValidatingErrorProvider;
     }
 }

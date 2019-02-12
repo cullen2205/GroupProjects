@@ -67,6 +67,20 @@ insert into Services(RoomId, ServiceName, Price) values
 	(3, 'Cho thuê', 300000),
 	(4, 'Cho thuê', 400000),
 	(5, 'Cho thuê', 500000);
+
+create table if not exists Customers
+(
+	Id integer primary key autoincrement,
+	FullName nvarchar(50),
+	DateOfBirth date,
+	Sex integer,
+	RealLifeIdNumber char(20)
+);
+
+insert into Customers(FullName, Sex, RealLifeIdNumber) values
+	('Nguyễn Văn A', 0, '123456789'),
+	('Nga Vân Uyên', 1, '987654321');
+
         ";
 
         static bool TableExists(String tableName, SQLiteConnection connection)
@@ -79,7 +93,7 @@ insert into Services(RoomId, ServiceName, Price) values
 
         public static bool DatabaseIsValid(SQLiteConnection connection)
         {
-            string[] tableNames = { "Employees", "Rooms", "Services" };
+            string[] tableNames = { "Employees", "Rooms", "Services", "Customers" };
             foreach(string tableName in tableNames)
                 if (!TableExists(tableName, connection))
                     return false;

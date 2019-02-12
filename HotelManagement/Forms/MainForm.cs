@@ -66,5 +66,11 @@ namespace HotelManagement
         {
             Application.Exit();
         }
+        
+
+        private void manageCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new CustomerManageForm().Show();
+        }
     }
 }

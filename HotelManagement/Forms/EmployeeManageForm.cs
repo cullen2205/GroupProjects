@@ -20,21 +20,10 @@ namespace HotelManagement
 
         private void LoadAllEmployees()
         {
-            var list = LazyWorker<Employee>.GetAll();
-            var table = LazyWorker<Employee>.ListToDataTable(list);
-            LazyLoader.SetColumnsOrder
-            (
-                table, "Id", "Username", "Password", "IsAdmin", 
+            LazyWorker<Employee>.LoadAllToGridView(gridView: EmployeeGridView,
+                columnNames: new string[] { "Id", "Username", "Password", "IsAdmin",
                 "RealLifeIdNumber", "FullName", "DateOfBirth", "Sex",
-                "Address", "Phonenumber"
-            );
-            table.Columns.Add("Filter");
-            foreach(DataRow row in table.Rows)
-                row["Filter"] = LazyWorker<Employee>
-                    .DataRowToObject(row)
-                    .ToFilteringString();
-
-            EmployeeGridView.DataSource = table;
+                "Address", "Phonenumber" });
 
             EmployeeGridView.Columns["Id"].Visible = false;
 

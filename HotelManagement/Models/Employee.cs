@@ -20,7 +20,7 @@ namespace HotelManagement
         public string Address { get; set; }
         public string Phonenumber { get; set; }
 
-        public string ToFilteringString()
+        public override string ToString()
         {
             return string.Format("{0} {1} {2} {3} {4} {5} {6} {7}", 
                 Id, Username, RealLifeIdNumber, FullName, 

@@ -31,12 +31,12 @@
             this.MainFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.incomeStatisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +82,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,14 +117,21 @@
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.createToolStripMenuItem.Text = "Tạo mới";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.logoutToolStripMenuItem.Text = "Đăng xuất";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.exitToolStripMenuItem.Text = "Thoát";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -134,7 +141,7 @@
             this.changePasswordToolStripMenuItem,
             this.manageEmployeeToolStripMenuItem,
             this.manageServiceToolStripMenuItem,
-            this.manageGuestToolStripMenuItem,
+            this.manageCustomerToolStripMenuItem,
             this.manageBillToolStripMenuItem,
             this.incomeStatisticToolStripMenuItem});
             this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
@@ -144,40 +151,34 @@
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changePasswordToolStripMenuItem.Text = "Đổi mật khẩu";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // manageEmployeeToolStripMenuItem
             // 
             this.manageEmployeeToolStripMenuItem.Name = "manageEmployeeToolStripMenuItem";
-            this.manageEmployeeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.manageEmployeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageEmployeeToolStripMenuItem.Text = "Quản lý nhân viên";
             this.manageEmployeeToolStripMenuItem.Click += new System.EventHandler(this.manageEmployeeToolStripMenuItem_Click);
             // 
             // manageServiceToolStripMenuItem
             // 
             this.manageServiceToolStripMenuItem.Name = "manageServiceToolStripMenuItem";
-            this.manageServiceToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.manageServiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageServiceToolStripMenuItem.Text = "Quản lý dịch vụ";
             this.manageServiceToolStripMenuItem.Click += new System.EventHandler(this.manageServiceToolStripMenuItem_Click);
-            // 
-            // manageGuestToolStripMenuItem
-            // 
-            this.manageGuestToolStripMenuItem.Name = "manageGuestToolStripMenuItem";
-            this.manageGuestToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.manageGuestToolStripMenuItem.Text = "Quản lý khách";
             // 
             // manageBillToolStripMenuItem
             // 
             this.manageBillToolStripMenuItem.Name = "manageBillToolStripMenuItem";
-            this.manageBillToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.manageBillToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageBillToolStripMenuItem.Text = "Quản lý hóa đơn";
             // 
             // incomeStatisticToolStripMenuItem
             // 
             this.incomeStatisticToolStripMenuItem.Name = "incomeStatisticToolStripMenuItem";
-            this.incomeStatisticToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.incomeStatisticToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.incomeStatisticToolStripMenuItem.Text = "Thống kê thu nhập";
             // 
             // helpToolStripMenuItem
@@ -564,12 +565,12 @@
             this.button2.Text = "Tạo mới";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // logoutToolStripMenuItem
+            // manageCustomerToolStripMenuItem
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logoutToolStripMenuItem.Text = "Đăng xuất";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.manageCustomerToolStripMenuItem.Name = "manageCustomerToolStripMenuItem";
+            this.manageCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageCustomerToolStripMenuItem.Text = "Quản lý khách";
+            this.manageCustomerToolStripMenuItem.Click += new System.EventHandler(this.manageCustomerToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -610,7 +611,6 @@
         private System.Windows.Forms.ToolStripMenuItem functionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageServiceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageGuestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem incomeStatisticToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
@@ -659,5 +659,6 @@
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageCustomerToolStripMenuItem;
     }
 }

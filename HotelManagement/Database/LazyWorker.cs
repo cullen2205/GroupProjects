@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Dapper.Contrib.Extensions;
 using FastMember;
 
@@ -65,5 +66,21 @@ namespace HotelManagement
             return item;
         }
         
+        public static void LoadAllToGridView
+        (
+            DataGridView gridView,
+            string[] columnNames,
+            List<T> customList = null
+        )
+        {
+            var list = customList ?? GetAll();
+            var table = ListToDataTable(list);
+            LessLazyWorker.SetColumnsOrder(table, columnNames);
+            table.Columns.Add("Filter");
+            foreach (DataRow row in table.Rows)
+                row["Filter"] = DataRowToObject(row).ToString();
+
+            gridView.DataSource = table;
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace HotelManagement
     {
         public Room BelongToRoom { get; set; }
 
-        public string ToFilteringString()
+        public override string ToString()
         {
             return string.Format("{0} {1} {2}", BelongToRoom, ServiceName, Price);
         }
