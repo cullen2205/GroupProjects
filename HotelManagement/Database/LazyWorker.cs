@@ -55,7 +55,6 @@ namespace HotelManagement
             foreach (DataColumn column in dataRow.Table.Columns)
             {
                 PropertyInfo property = item.GetType().GetProperty(column.ColumnName);
-
                 if (property != null && dataRow[column] != DBNull.Value)
                 {
                     object result = Convert.ChangeType(dataRow[column], property.PropertyType);
@@ -81,6 +80,28 @@ namespace HotelManagement
                 row["Filter"] = DataRowToObject(row).ToString();
 
             gridView.DataSource = table;
+        }
+
+        public static void LoadOneFromGridView
+        (
+            DataGridView gridView, 
+            Action<T> loadFunction,
+            Button saveButton,
+            Button deleteButton
+        )
+        {
+            if ((gridView.SelectedRows.Count > 0 && gridView.SelectedRows[0] != null)
+                || gridView.Rows.Count == 1)
+            {
+                DataRowView rowView = (gridView.Rows.Count == 1)
+                    ? (gridView.Rows[0].DataBoundItem as DataRowView)
+                    : (gridView.SelectedRows[0].DataBoundItem as DataRowView);
+
+                loadFunction(DataRowToObject(rowView.Row));
+
+                saveButton.Enabled = true;
+                deleteButton.Enabled = true;
+            }
         }
     }
 }

@@ -72,5 +72,10 @@ namespace HotelManagement
         {
             new CustomerManageForm().Show();
         }
+
+        private void manageBillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BillManageForm().Show();
+        }
     }
 }

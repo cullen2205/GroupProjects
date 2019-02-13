@@ -86,7 +86,7 @@
             this.CustomerInforGroupBox.Location = new System.Drawing.Point(12, 283);
             this.CustomerInforGroupBox.Name = "CustomerInforGroupBox";
             this.CustomerInforGroupBox.Size = new System.Drawing.Size(229, 164);
-            this.CustomerInforGroupBox.TabIndex = 5;
+            this.CustomerInforGroupBox.TabIndex = 1;
             this.CustomerInforGroupBox.TabStop = false;
             this.CustomerInforGroupBox.Text = "Thông tin khách hàng";
             // 
@@ -95,9 +95,10 @@
             this.ResetButton.Location = new System.Drawing.Point(6, 130);
             this.ResetButton.Name = "ResetButton";
             this.ResetButton.Size = new System.Drawing.Size(56, 23);
-            this.ResetButton.TabIndex = 23;
+            this.ResetButton.TabIndex = 8;
             this.ResetButton.Text = "Đặt lại";
             this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // DeleteButton
             // 
@@ -105,9 +106,10 @@
             this.DeleteButton.Location = new System.Drawing.Point(173, 130);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(39, 23);
-            this.DeleteButton.TabIndex = 13;
+            this.DeleteButton.TabIndex = 11;
             this.DeleteButton.Text = "Xóa";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // SaveButton
             // 
@@ -115,18 +117,20 @@
             this.SaveButton.Location = new System.Drawing.Point(129, 130);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(38, 23);
-            this.SaveButton.TabIndex = 12;
+            this.SaveButton.TabIndex = 10;
             this.SaveButton.Text = "Lưu";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // NewButton
             // 
             this.NewButton.Location = new System.Drawing.Point(68, 130);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(55, 23);
-            this.NewButton.TabIndex = 11;
+            this.NewButton.TabIndex = 9;
             this.NewButton.Text = "Tạo mới";
             this.NewButton.UseVisualStyleBackColor = true;
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
             // FemaleRadioButton
             // 
@@ -134,7 +138,7 @@
             this.FemaleRadioButton.Location = new System.Drawing.Point(146, 73);
             this.FemaleRadioButton.Name = "FemaleRadioButton";
             this.FemaleRadioButton.Size = new System.Drawing.Size(39, 17);
-            this.FemaleRadioButton.TabIndex = 8;
+            this.FemaleRadioButton.TabIndex = 6;
             this.FemaleRadioButton.TabStop = true;
             this.FemaleRadioButton.Text = "Nữ";
             this.FemaleRadioButton.UseVisualStyleBackColor = true;
@@ -146,7 +150,7 @@
             this.MaleRadioButton.Location = new System.Drawing.Point(93, 73);
             this.MaleRadioButton.Name = "MaleRadioButton";
             this.MaleRadioButton.Size = new System.Drawing.Size(47, 17);
-            this.MaleRadioButton.TabIndex = 7;
+            this.MaleRadioButton.TabIndex = 5;
             this.MaleRadioButton.TabStop = true;
             this.MaleRadioButton.Text = "Nam";
             this.MaleRadioButton.UseVisualStyleBackColor = true;
@@ -174,7 +178,7 @@
             this.RealLifeIdNumberTextbox.Location = new System.Drawing.Point(93, 96);
             this.RealLifeIdNumberTextbox.Name = "RealLifeIdNumberTextbox";
             this.RealLifeIdNumberTextbox.Size = new System.Drawing.Size(100, 20);
-            this.RealLifeIdNumberTextbox.TabIndex = 9;
+            this.RealLifeIdNumberTextbox.TabIndex = 7;
             // 
             // DateOfBirthDatePicker
             // 
@@ -184,7 +188,7 @@
             this.DateOfBirthDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.DateOfBirthDatePicker.Name = "DateOfBirthDatePicker";
             this.DateOfBirthDatePicker.Size = new System.Drawing.Size(118, 20);
-            this.DateOfBirthDatePicker.TabIndex = 6;
+            this.DateOfBirthDatePicker.TabIndex = 4;
             this.DateOfBirthDatePicker.Value = new System.DateTime(1990, 1, 1, 2, 0, 0, 0);
             // 
             // RealLifeIdNumberLabel
@@ -202,7 +206,7 @@
             this.FullNameTextbox.MaxLength = 50;
             this.FullNameTextbox.Name = "FullNameTextbox";
             this.FullNameTextbox.Size = new System.Drawing.Size(100, 20);
-            this.FullNameTextbox.TabIndex = 5;
+            this.FullNameTextbox.TabIndex = 3;
             // 
             // FullNameLabel
             // 
@@ -221,7 +225,7 @@
             this.CustomerListGroupBox.Location = new System.Drawing.Point(11, 38);
             this.CustomerListGroupBox.Name = "CustomerListGroupBox";
             this.CustomerListGroupBox.Size = new System.Drawing.Size(334, 238);
-            this.CustomerListGroupBox.TabIndex = 3;
+            this.CustomerListGroupBox.TabIndex = 0;
             this.CustomerListGroupBox.TabStop = false;
             this.CustomerListGroupBox.Text = "Danh sách khách hàng";
             // 
@@ -251,6 +255,7 @@
             this.CustomerGridView.MultiSelect = false;
             this.CustomerGridView.Name = "CustomerGridView";
             this.CustomerGridView.ReadOnly = true;
+            this.CustomerGridView.RowHeadersVisible = false;
             this.CustomerGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CustomerGridView.ShowEditingIcon = false;
             this.CustomerGridView.Size = new System.Drawing.Size(319, 187);
@@ -277,6 +282,7 @@
             this.Controls.Add(this.TitleLabel);
             this.Name = "CustomerManageForm";
             this.Text = "Quản lý thông tin khách hàng";
+            this.Shown += new System.EventHandler(this.CustomerManageForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpdown)).EndInit();
             this.CustomerInforGroupBox.ResumeLayout(false);
             this.CustomerInforGroupBox.PerformLayout();

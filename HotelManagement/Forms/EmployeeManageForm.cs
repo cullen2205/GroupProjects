@@ -80,7 +80,7 @@ namespace HotelManagement
             DateOfBirthDatePicker.Value =
                 e.DateOfBirth.Date > DateOfBirthDatePicker.MaxDate
                 || e.DateOfBirth.Date < DateOfBirthDatePicker.MinDate ?
-                new DateTime(1990, 1, 1) : e.DateOfBirth;
+                new DateTime(1990, 1, 1).Date : e.DateOfBirth.Date;
             if (e.Sex)
                 FemaleRadioButton.Checked = true;
             else
@@ -112,18 +112,13 @@ namespace HotelManagement
 
         private void EmployeeGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if ((EmployeeGridView.SelectedRows.Count > 0 && EmployeeGridView.SelectedRows[0] != null)
-                || EmployeeGridView.Rows.Count == 1)
-            {
-                DataRowView rowView = (EmployeeGridView.Rows.Count == 1) 
-                    ? (EmployeeGridView.Rows[0].DataBoundItem as DataRowView) 
-                    : (EmployeeGridView.SelectedRows[0].DataBoundItem as DataRowView);
-
-                LoadOneEmployee(LazyWorker<Employee>.DataRowToObject(rowView.Row));
-
-                SaveButton.Enabled = true;
-                DeleteButton.Enabled = true;
-            }
+            LazyWorker<Employee>.LoadOneFromGridView
+            (
+                EmployeeGridView, 
+                LoadOneEmployee, 
+                SaveButton, 
+                DeleteButton
+            );
         }
 
         private void ResetButton_Click(object sender, EventArgs e)

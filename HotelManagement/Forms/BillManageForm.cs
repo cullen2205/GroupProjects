@@ -16,5 +16,10 @@ namespace HotelManagement
         {
             InitializeComponent();
         }
+
+        private void BillManageForm_Shown(object sender, EventArgs e)
+        {
+
+        }
     }
 }

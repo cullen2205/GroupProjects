@@ -37,6 +37,7 @@
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.incomeStatisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +83,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.manageCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -169,11 +169,19 @@
             this.manageServiceToolStripMenuItem.Text = "Quản lý dịch vụ";
             this.manageServiceToolStripMenuItem.Click += new System.EventHandler(this.manageServiceToolStripMenuItem_Click);
             // 
+            // manageCustomerToolStripMenuItem
+            // 
+            this.manageCustomerToolStripMenuItem.Name = "manageCustomerToolStripMenuItem";
+            this.manageCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageCustomerToolStripMenuItem.Text = "Quản lý khách";
+            this.manageCustomerToolStripMenuItem.Click += new System.EventHandler(this.manageCustomerToolStripMenuItem_Click);
+            // 
             // manageBillToolStripMenuItem
             // 
             this.manageBillToolStripMenuItem.Name = "manageBillToolStripMenuItem";
             this.manageBillToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageBillToolStripMenuItem.Text = "Quản lý hóa đơn";
+            this.manageBillToolStripMenuItem.Click += new System.EventHandler(this.manageBillToolStripMenuItem_Click);
             // 
             // incomeStatisticToolStripMenuItem
             // 
@@ -564,13 +572,6 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Tạo mới";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // manageCustomerToolStripMenuItem
-            // 
-            this.manageCustomerToolStripMenuItem.Name = "manageCustomerToolStripMenuItem";
-            this.manageCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.manageCustomerToolStripMenuItem.Text = "Quản lý khách";
-            this.manageCustomerToolStripMenuItem.Click += new System.EventHandler(this.manageCustomerToolStripMenuItem_Click);
             // 
             // MainForm
             // 
