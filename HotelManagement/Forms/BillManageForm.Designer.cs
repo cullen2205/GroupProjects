@@ -58,7 +58,7 @@
             this.BilListGroupBox.Location = new System.Drawing.Point(14, 51);
             this.BilListGroupBox.Name = "BilListGroupBox";
             this.BilListGroupBox.Size = new System.Drawing.Size(516, 320);
-            this.BilListGroupBox.TabIndex = 1;
+            this.BilListGroupBox.TabIndex = 0;
             this.BilListGroupBox.TabStop = false;
             this.BilListGroupBox.Text = "Danh sách các hóa đơn";
             // 
@@ -76,22 +76,27 @@
             this.FilterTextbox.Location = new System.Drawing.Point(66, 23);
             this.FilterTextbox.Name = "FilterTextbox";
             this.FilterTextbox.Size = new System.Drawing.Size(100, 20);
-            this.FilterTextbox.TabIndex = 2;
+            this.FilterTextbox.TabIndex = 1;
             // 
             // BillGridView
             // 
+            this.BillGridView.AllowUserToAddRows = false;
+            this.BillGridView.AllowUserToDeleteRows = false;
             this.BillGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BillGridView.Location = new System.Drawing.Point(6, 49);
+            this.BillGridView.MultiSelect = false;
             this.BillGridView.Name = "BillGridView";
+            this.BillGridView.ReadOnly = true;
+            this.BillGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.BillGridView.Size = new System.Drawing.Size(500, 260);
-            this.BillGridView.TabIndex = 1;
+            this.BillGridView.TabIndex = 2;
             // 
             // DeleteButton
             // 
             this.DeleteButton.Location = new System.Drawing.Point(455, 377);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.DeleteButton.TabIndex = 2;
+            this.DeleteButton.TabIndex = 5;
             this.DeleteButton.Text = "Xóa";
             this.DeleteButton.UseVisualStyleBackColor = true;
             // 
@@ -103,6 +108,7 @@
             this.NewButton.TabIndex = 3;
             this.NewButton.Text = "Thêm";
             this.NewButton.UseVisualStyleBackColor = true;
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
             // EditButton
             // 

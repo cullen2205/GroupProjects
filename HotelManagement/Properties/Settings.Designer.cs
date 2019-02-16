@@ -34,7 +34,7 @@ namespace HotelManagement.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\Database.db;Version=3;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\Database.db;Version=3;datetimeFormat=CurrentCulture")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

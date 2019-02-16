@@ -119,6 +119,7 @@
     <Compile Include="Forms\PasswordChangingForm.Designer.cs">
       <DependentUpon>PasswordChangingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Room.cs" />

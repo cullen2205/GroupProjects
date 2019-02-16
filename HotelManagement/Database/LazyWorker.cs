@@ -49,6 +49,24 @@ namespace HotelManagement
             return table;
         }
 
+        public static object ChangeType(object value, Type conversion)
+        {
+            var t = conversion;
+
+            if (t.IsGenericType 
+                && t.GetGenericTypeDefinition().Equals(typeof(Nullable<>)))
+            {
+                if (value == null)
+                {
+                    return null;
+                }
+
+                t = Nullable.GetUnderlyingType(t);
+            }
+
+            return Convert.ChangeType(value, t);
+        }
+
         public static T DataRowToObject(DataRow dataRow)
         {
             T item = new T();
@@ -57,7 +75,7 @@ namespace HotelManagement
                 PropertyInfo property = item.GetType().GetProperty(column.ColumnName);
                 if (property != null && dataRow[column] != DBNull.Value)
                 {
-                    object result = Convert.ChangeType(dataRow[column], property.PropertyType);
+                    object result = ChangeType(dataRow[column], property.PropertyType);
                     property.SetValue(item, result, null);
                 }
             }

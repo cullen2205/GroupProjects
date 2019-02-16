@@ -39,6 +39,39 @@ namespace HotelManagement
                 }).AsList();
         }
 
+        public static int TotalMoneyOfBill(int billId)
+        {
+            return connection.ExecuteScalar<int>(
+                @"select sum(Services.Price*BillDetails.Count) from BillDetails
+                join Services on BillDetails.ServiceId = Services.Id
+                where BillDetails.BillId = @billId", 
+                new { billId });
+        }
+        
+        public static List<BillDisplay> GetAllBills()
+        {
+            List<BillDisplay> bills = new List<BillDisplay>();
+            
+            foreach(BillModel billModel in LazyWorker<BillModel>.GetAll())
+            {
+                bills.Add(new BillDisplay()
+                {
+                    Id = billModel.Id,
+                    Customer_ = LazyWorker<Customer>.Get
+                    (
+                        billModel.CustomerId ?? 0
+                    ),
+                    Employee_ = LazyWorker<Employee>.Get
+                    (
+                        billModel.EmployeeId ?? 0
+                    ),
+                    CreatingDay = billModel.CreatingDay
+                });
+            }
+
+            return bills;
+        }
+
         public static void SetColumnsOrder(DataTable table, 
             params String[] columnNames)
         {

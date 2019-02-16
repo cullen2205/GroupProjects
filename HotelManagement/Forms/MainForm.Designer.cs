@@ -151,42 +151,42 @@
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.changePasswordToolStripMenuItem.Text = "Đổi mật khẩu";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // manageEmployeeToolStripMenuItem
             // 
             this.manageEmployeeToolStripMenuItem.Name = "manageEmployeeToolStripMenuItem";
-            this.manageEmployeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageEmployeeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.manageEmployeeToolStripMenuItem.Text = "Quản lý nhân viên";
             this.manageEmployeeToolStripMenuItem.Click += new System.EventHandler(this.manageEmployeeToolStripMenuItem_Click);
             // 
             // manageServiceToolStripMenuItem
             // 
             this.manageServiceToolStripMenuItem.Name = "manageServiceToolStripMenuItem";
-            this.manageServiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageServiceToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.manageServiceToolStripMenuItem.Text = "Quản lý dịch vụ";
             this.manageServiceToolStripMenuItem.Click += new System.EventHandler(this.manageServiceToolStripMenuItem_Click);
             // 
             // manageCustomerToolStripMenuItem
             // 
             this.manageCustomerToolStripMenuItem.Name = "manageCustomerToolStripMenuItem";
-            this.manageCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageCustomerToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.manageCustomerToolStripMenuItem.Text = "Quản lý khách";
             this.manageCustomerToolStripMenuItem.Click += new System.EventHandler(this.manageCustomerToolStripMenuItem_Click);
             // 
             // manageBillToolStripMenuItem
             // 
             this.manageBillToolStripMenuItem.Name = "manageBillToolStripMenuItem";
-            this.manageBillToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageBillToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.manageBillToolStripMenuItem.Text = "Quản lý hóa đơn";
             this.manageBillToolStripMenuItem.Click += new System.EventHandler(this.manageBillToolStripMenuItem_Click);
             // 
             // incomeStatisticToolStripMenuItem
             // 
             this.incomeStatisticToolStripMenuItem.Name = "incomeStatisticToolStripMenuItem";
-            this.incomeStatisticToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.incomeStatisticToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.incomeStatisticToolStripMenuItem.Text = "Thống kê thu nhập";
             // 
             // helpToolStripMenuItem
@@ -467,6 +467,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(118, 20);
             this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker1.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // textBox3
             // 

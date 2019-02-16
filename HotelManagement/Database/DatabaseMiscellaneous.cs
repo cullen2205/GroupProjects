@@ -81,6 +81,30 @@ insert into Customers(FullName, Sex, RealLifeIdNumber) values
 	('Nguyễn Văn A', 0, '123456789'),
 	('Nga Vân Uyên', 1, '987654321');
 
+create table if not exists Bills
+(
+    Id integer primary key autoincrement,
+    CustomerId integer,
+    EmployeeId integer,
+    CreatingDay date
+);
+
+create table if not exists BillDetails
+(
+	Id integer primary key autoincrement,
+    BillId integer not null,
+	ServiceId integer not null,
+	Count integer not null
+);
+
+insert into Bills(CustomerId, EmployeeId, CreatingDay) values
+	(1, 1, '1/1/2019'),
+	(2, 1, '1/1/2019');
+
+insert into BillDetails (BillId, ServiceId, Count) values
+	(1, 1, 1),
+	(2, 2, 2);
+
         ";
 
         static bool TableExists(String tableName, SQLiteConnection connection)
