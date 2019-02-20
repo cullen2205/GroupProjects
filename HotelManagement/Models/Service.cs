@@ -24,9 +24,30 @@ namespace HotelManagement
     {
         public Room BelongToRoom { get; set; }
 
+        [Computed]
+        public string DisplayString
+        {
+            set { }
+            get
+            {
+                return string.Format("{0} {1}", ServiceName, BelongToRoom);
+            }
+        }
+
         public override string ToString()
         {
             return string.Format("{0} {1} {2}", BelongToRoom, ServiceName, Price);
         }
+    }
+
+    public class ServiceMapped : ServiceModel
+    {
+        //Id, ServiceName, Price, RoomId, Count, BillId, BelongToRoom
+        public int Count { get; set; }
+        public int BillId { get; set; }
+        public int BillDetailId { get; set; }
+
+        [Computed]
+        public Room BelongToRoom { get; set; }
     }
 }

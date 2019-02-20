@@ -14,6 +14,7 @@ namespace HotelManagement
 {
     public static class LazyWorker<T> where T : class, new()
     {
+        //the class's name includes 'lazy' since it uses template
         static SQLiteConnection connection = DatabaseMiscellaneous.GetConnection();
         public static List<T> GetAll()
         {
@@ -40,6 +41,7 @@ namespace HotelManagement
             return connection.Get<T>(Id);
         }
 
+        //DataTable is a good class to be used as DataGridView's DataSource
         public static DataTable ListToDataTable(List<T> list)
         {
             DataTable table = new DataTable();
@@ -49,6 +51,7 @@ namespace HotelManagement
             return table;
         }
 
+        //Change type from nullable to non-nullable one
         public static object ChangeType(object value, Type conversion)
         {
             var t = conversion;
@@ -60,13 +63,13 @@ namespace HotelManagement
                 {
                     return null;
                 }
-
                 t = Nullable.GetUnderlyingType(t);
             }
 
             return Convert.ChangeType(value, t);
         }
 
+        //DataGridView's row to object, since mapping manually is boilerplate code
         public static T DataRowToObject(DataRow dataRow)
         {
             T item = new T();
@@ -83,11 +86,12 @@ namespace HotelManagement
             return item;
         }
         
+        //one same function to every DataGridView
         public static void LoadAllToGridView
         (
             DataGridView gridView,
-            string[] columnNames,
-            List<T> customList = null
+            string[] columnNames, //order
+            List<T> customList = null //if the list is null then use GetAll()
         )
         {
             var list = customList ?? GetAll();

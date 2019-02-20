@@ -36,8 +36,10 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.NewButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
+            this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.BilListGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -118,12 +120,26 @@
             this.EditButton.TabIndex = 4;
             this.EditButton.Text = "Sửa";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // IdNumericUpDown
+            // 
+            this.IdNumericUpDown.Location = new System.Drawing.Point(477, 25);
+            this.IdNumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.IdNumericUpDown.Name = "IdNumericUpDown";
+            this.IdNumericUpDown.Size = new System.Drawing.Size(0, 20);
+            this.IdNumericUpDown.TabIndex = 6;
             // 
             // BillManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 416);
+            this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.NewButton);
             this.Controls.Add(this.DeleteButton);
@@ -135,6 +151,7 @@
             this.BilListGroupBox.ResumeLayout(false);
             this.BilListGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +167,6 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button NewButton;
         private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.NumericUpDown IdNumericUpDown;
     }
 }

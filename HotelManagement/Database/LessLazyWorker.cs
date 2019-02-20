@@ -39,11 +39,39 @@ namespace HotelManagement
                 }).AsList();
         }
 
-        public static int TotalMoneyOfBill(int billId)
+        public static List<ServiceDisplay> GetServiceByBill(int billId)
+        {
+            return connection.Query<ServiceDisplay>
+                (@"select s.Id, s.ServiceName, s.Price, r.Id, r.RoomName 
+                from Services s left join Rooms r on s.RoomId = r.Id
+                where s.Id in (select ServiceId from BillDetails where BillId = @billId)",
+                new { billId })
+                .AsList();
+        }
+
+        public static List<ServiceMapped> GetMappedServiceByBill(int billId)
+        {
+            var list = connection.Query<ServiceMapped>
+                (@"select Services.Id, Services.Price, Services.RoomId, Services.ServiceName, 
+                BillDetails.Count, BillDetails.BillId, BillDetails.Id as BillDetailId
+                from BillDetails join Services on BillDetails.ServiceId = Services.Id
+                where BillDetails.BillId = @billId",
+                new { billId })
+                .AsList();
+
+            list.ForEach
+            (
+                s => s.BelongToRoom = LazyWorker<Room>.Get(s.RoomId ?? 0)
+            );
+
+            return list;
+        }
+
+        public static int TotalPriceOfBill(int billId)
         {
             return connection.ExecuteScalar<int>(
                 @"select sum(Services.Price*BillDetails.Count) from BillDetails
-                join Services on BillDetails.ServiceId = Services.Id
+                left join Services on BillDetails.ServiceId = Services.Id
                 where BillDetails.BillId = @billId", 
                 new { billId });
         }
@@ -65,7 +93,8 @@ namespace HotelManagement
                     (
                         billModel.EmployeeId ?? 0
                     ),
-                    CreatingDay = billModel.CreatingDay
+                    CreatingDay = billModel.CreatingDay,
+                    TotalPrice = TotalPriceOfBill(billModel.Id)
                 });
             }
 

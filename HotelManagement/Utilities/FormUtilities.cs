@@ -82,6 +82,13 @@ namespace HotelManagement
                 provider.SetError(control, "");
         }
 
+        public static void NotifyFailure()
+        {
+            MessageBox.Show("Thao tác thất bại!", "Thất bại",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
+        }
+
         public static void NotifySuccess()
         {
             MessageBox.Show("Thao tác thành công!", "Thành công", 

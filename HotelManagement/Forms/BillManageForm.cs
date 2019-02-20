@@ -30,16 +30,14 @@ namespace HotelManagement
             DataTable table = (DataTable)BillGridView.DataSource;
             table.Columns.Add("Customer");
             table.Columns.Add("Employee");
-            table.Columns.Add("TotalMoney");
             LessLazyWorker.SetColumnsOrder(table,
-                new string[] { "Customer", "Employee", "CreatingDay", "TotalMoney" });
+                new string[] { "Customer", "Employee", "CreatingDay", "TotalPrice" });
 
             foreach(DataRow row in table.Rows)
             {
                 BillDisplay bill = LazyWorker<BillDisplay>.DataRowToObject(row);
                 row["Customer"] = bill.Customer_.FullName;
                 row["Employee"] = bill.Employee_.Username;
-                row["TotalMoney"] = LessLazyWorker.TotalMoneyOfBill(bill.Id);
             }
 
             BillGridView.DataSource = table;
@@ -52,17 +50,51 @@ namespace HotelManagement
             BillGridView.Columns["CreatingDay"].HeaderText = "Ngày khởi tạo";
             BillGridView.Columns["Customer"].HeaderText = "Tên khách";
             BillGridView.Columns["Employee"].HeaderText = "Tạo bởi";
-            BillGridView.Columns["TotalMoney"].HeaderText = "Tổng tiền";
+            BillGridView.Columns["TotalPrice"].HeaderText = "Tổng tiền";
+            BillGridView.Columns["TotalPrice"].DefaultCellStyle.Format = "### ### ### ###";
         }
 
         private void BillManageForm_Shown(object sender, EventArgs e)
         {
+            BillGridView.ClearSelection();
+            BillGridView.RowEnter += BillGridView_RowEnter;
+        }
 
+        BillDisplay bill;
+        private void LoadOneBill(BillDisplay bill)
+        {
+            IdNumericUpDown.Value = bill.Id;
+            this.bill = new BillDisplay()
+            {
+                Id = bill.Id,
+                CreatingDay = bill.CreatingDay,
+                Customer_ = bill.Customer_,
+                Employee_ = bill.Employee_,
+                TotalPrice = bill.TotalPrice
+            };
+        }
+
+        private void BillGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            LazyWorker<BillDisplay>.LoadOneFromGridView
+            (
+                BillGridView, 
+                LoadOneBill, 
+                EditButton, 
+                DeleteButton
+            );
         }
 
         private void NewButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = Owner as MainForm;
+            if(bill != null)
+                mainForm.SetCurrentBill(bill);
         }
     }
 }

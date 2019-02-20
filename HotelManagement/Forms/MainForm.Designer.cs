@@ -43,53 +43,61 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceListGridView = new System.Windows.Forms.DataGridView();
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.ServiceListGroupBox = new System.Windows.Forms.GroupBox();
+            this.ServicePriceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SaveServiceButton = new System.Windows.Forms.Button();
+            this.RemoveServiceButton = new System.Windows.Forms.Button();
+            this.TotalPriceLabel = new System.Windows.Forms.Label();
+            this.TotalPriceNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FilterLabel = new System.Windows.Forms.Label();
+            this.AddServiceButton = new System.Windows.Forms.Button();
+            this.ServiceCountNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ServiceCountLabel = new System.Windows.Forms.Label();
+            this.ServiceComboBox = new System.Windows.Forms.ComboBox();
+            this.ServiceFilterTextbox = new System.Windows.Forms.TextBox();
+            this.ServiceLabel = new System.Windows.Forms.Label();
+            this.EmployeeGroupBox = new System.Windows.Forms.GroupBox();
+            this.EmployeeFilterTextbox = new System.Windows.Forms.TextBox();
+            this.EmployeeLabel = new System.Windows.Forms.Label();
+            this.EmployeeComboBox = new System.Windows.Forms.ComboBox();
+            this.EmployeeFilterLabel = new System.Windows.Forms.Label();
+            this.CustomerGroupBox = new System.Windows.Forms.GroupBox();
+            this.CustomerFemaleButton = new System.Windows.Forms.RadioButton();
+            this.CustomerMaleButton = new System.Windows.Forms.RadioButton();
+            this.CustomerSexLabel = new System.Windows.Forms.Label();
+            this.CustomerDateOfBirthLabel = new System.Windows.Forms.Label();
+            this.CustomerRLIDTextBox = new System.Windows.Forms.TextBox();
+            this.CustomerDateOfBirthPicker = new System.Windows.Forms.DateTimePicker();
+            this.CustomerFullNameTextBox = new System.Windows.Forms.TextBox();
+            this.HorizontalLineLabel = new System.Windows.Forms.Label();
+            this.CustomerFilterTextBox = new System.Windows.Forms.TextBox();
+            this.CustomerLabel = new System.Windows.Forms.Label();
+            this.CustomerComboBox = new System.Windows.Forms.ComboBox();
+            this.CustomerFilterLabel = new System.Windows.Forms.Label();
+            this.CustomerRLIDLabel = new System.Windows.Forms.Label();
+            this.CustomerFullNameLabel = new System.Windows.Forms.Label();
+            this.BillManipulatingGroupBox = new System.Windows.Forms.GroupBox();
+            this.ResetBillButton = new System.Windows.Forms.Button();
+            this.DeleteBillButton = new System.Windows.Forms.Button();
+            this.SaveBillButton = new System.Windows.Forms.Button();
+            this.NewBillButton = new System.Windows.Forms.Button();
+            this.ExportBillButton = new System.Windows.Forms.Button();
+            this.ResetCustomerButton = new System.Windows.Forms.Button();
+            this.DeleteCustomerButton = new System.Windows.Forms.Button();
+            this.SaveCustomerButton = new System.Windows.Forms.Button();
+            this.CreateCustomerButton = new System.Windows.Forms.Button();
             this.MainFormMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceListGridView)).BeginInit();
+            this.ServiceListGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicePriceNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalPriceNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceCountNumericUpDown)).BeginInit();
+            this.EmployeeGroupBox.SuspendLayout();
+            this.CustomerGroupBox.SuspendLayout();
+            this.BillManipulatingGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainFormMenuStrip
@@ -100,7 +108,7 @@
             this.helpToolStripMenuItem});
             this.MainFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainFormMenuStrip.Name = "MainFormMenuStrip";
-            this.MainFormMenuStrip.Size = new System.Drawing.Size(742, 24);
+            this.MainFormMenuStrip.Size = new System.Drawing.Size(809, 24);
             this.MainFormMenuStrip.TabIndex = 0;
             this.MainFormMenuStrip.Text = "MainFormMenuStrip";
             // 
@@ -210,396 +218,529 @@
             this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
             // 
-            // dataGridView1
+            // ServiceListGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(483, 260);
-            this.dataGridView1.TabIndex = 1;
+            this.ServiceListGridView.AllowUserToAddRows = false;
+            this.ServiceListGridView.AllowUserToDeleteRows = false;
+            this.ServiceListGridView.Location = new System.Drawing.Point(6, 19);
+            this.ServiceListGridView.MultiSelect = false;
+            this.ServiceListGridView.Name = "ServiceListGridView";
+            this.ServiceListGridView.ReadOnly = true;
+            this.ServiceListGridView.RowHeadersVisible = false;
+            this.ServiceListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ServiceListGridView.Size = new System.Drawing.Size(483, 260);
+            this.ServiceListGridView.TabIndex = 1;
             // 
-            // Column1
+            // TitleLabel
             // 
-            this.Column1.HeaderText = "STT";
-            this.Column1.Name = "Column1";
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.Location = new System.Drawing.Point(142, 34);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(245, 26);
+            this.TitleLabel.TabIndex = 2;
+            this.TitleLabel.Text = "Thêm hoặc sửa hóa đơn";
             // 
-            // Column2
+            // ServiceListGroupBox
             // 
-            this.Column2.HeaderText = "Dịch vụ";
-            this.Column2.Name = "Column2";
+            this.ServiceListGroupBox.Controls.Add(this.ServicePriceNumericUpDown);
+            this.ServiceListGroupBox.Controls.Add(this.label1);
+            this.ServiceListGroupBox.Controls.Add(this.SaveServiceButton);
+            this.ServiceListGroupBox.Controls.Add(this.RemoveServiceButton);
+            this.ServiceListGroupBox.Controls.Add(this.TotalPriceLabel);
+            this.ServiceListGroupBox.Controls.Add(this.TotalPriceNumericUpDown);
+            this.ServiceListGroupBox.Controls.Add(this.FilterLabel);
+            this.ServiceListGroupBox.Controls.Add(this.AddServiceButton);
+            this.ServiceListGroupBox.Controls.Add(this.ServiceCountNumericUpDown);
+            this.ServiceListGroupBox.Controls.Add(this.ServiceCountLabel);
+            this.ServiceListGroupBox.Controls.Add(this.ServiceComboBox);
+            this.ServiceListGroupBox.Controls.Add(this.ServiceFilterTextbox);
+            this.ServiceListGroupBox.Controls.Add(this.ServiceLabel);
+            this.ServiceListGroupBox.Controls.Add(this.ServiceListGridView);
+            this.ServiceListGroupBox.Location = new System.Drawing.Point(26, 77);
+            this.ServiceListGroupBox.Name = "ServiceListGroupBox";
+            this.ServiceListGroupBox.Size = new System.Drawing.Size(495, 368);
+            this.ServiceListGroupBox.TabIndex = 0;
+            this.ServiceListGroupBox.TabStop = false;
+            this.ServiceListGroupBox.Text = "Các dịch vụ đã sử dụng";
             // 
-            // Column3
+            // ServicePriceNumericUpDown
             // 
-            this.Column3.HeaderText = "Giá tiền";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Số lượng";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Thành tiền";
-            this.Column5.Name = "Column5";
+            this.ServicePriceNumericUpDown.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ServicePriceNumericUpDown.Location = new System.Drawing.Point(369, 286);
+            this.ServicePriceNumericUpDown.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.ServicePriceNumericUpDown.Name = "ServicePriceNumericUpDown";
+            this.ServicePriceNumericUpDown.ReadOnly = true;
+            this.ServicePriceNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.ServicePriceNumericUpDown.TabIndex = 16;
+            this.ServicePriceNumericUpDown.TabStop = false;
+            this.ServicePriceNumericUpDown.ThousandsSeparator = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(142, 34);
+            this.label1.Location = new System.Drawing.Point(300, 288);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 26);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Thêm hoặc sửa hóa đơn";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(26, 77);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(495, 368);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Các dịch vụ đã sử dụng";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 288);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Bộ lọc";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(378, 335);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Thêm vào hóa đơn";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(66, 338);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown1.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 340);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Số lượng";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 311);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(66, 285);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 314);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Dịch vụ";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(527, 306);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 76);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin nhân viên";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(68, 18);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 13;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 47);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 13);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Nhân viên";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(68, 44);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 14;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 21);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Bộ lọc";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(527, 77);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 223);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thông tin khách hàng";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(119, 194);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Tạo mới";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(121, 141);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(68, 141);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 143);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Giới tính";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 120);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Ngày sinh";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(68, 164);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(68, 116);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(68, 90);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
-            // 
-            // label9
-            // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Location = new System.Drawing.Point(31, 77);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 2);
-            this.label9.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(68, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Khách";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(68, 45);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Bộ lọc";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 167);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "CMND";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Họ tên";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Location = new System.Drawing.Point(527, 388);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 57);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Chức năng với hóa đơn";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(140, 23);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(49, 23);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Xuất";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(79, 24);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Lưu";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(9, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Tạo mới";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Giá dịch vụ";
+            // 
+            // SaveServiceButton
+            // 
+            this.SaveServiceButton.Location = new System.Drawing.Point(319, 335);
+            this.SaveServiceButton.Name = "SaveServiceButton";
+            this.SaveServiceButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveServiceButton.TabIndex = 14;
+            this.SaveServiceButton.Text = "Lưu thay đổi";
+            this.SaveServiceButton.UseVisualStyleBackColor = true;
+            this.SaveServiceButton.Click += new System.EventHandler(this.SaveServiceButton_Click);
+            // 
+            // RemoveServiceButton
+            // 
+            this.RemoveServiceButton.Location = new System.Drawing.Point(235, 335);
+            this.RemoveServiceButton.Name = "RemoveServiceButton";
+            this.RemoveServiceButton.Size = new System.Drawing.Size(78, 23);
+            this.RemoveServiceButton.TabIndex = 13;
+            this.RemoveServiceButton.Text = "Xóa dịch vụ";
+            this.RemoveServiceButton.UseVisualStyleBackColor = true;
+            this.RemoveServiceButton.Click += new System.EventHandler(this.RemoveServiceButton_Click);
+            // 
+            // TotalPriceLabel
+            // 
+            this.TotalPriceLabel.AutoSize = true;
+            this.TotalPriceLabel.Location = new System.Drawing.Point(312, 314);
+            this.TotalPriceLabel.Name = "TotalPriceLabel";
+            this.TotalPriceLabel.Size = new System.Drawing.Size(49, 13);
+            this.TotalPriceLabel.TabIndex = 12;
+            this.TotalPriceLabel.Text = "Tổng giá";
+            // 
+            // TotalPriceNumericUpDown
+            // 
+            this.TotalPriceNumericUpDown.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.TotalPriceNumericUpDown.Location = new System.Drawing.Point(369, 312);
+            this.TotalPriceNumericUpDown.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.TotalPriceNumericUpDown.Name = "TotalPriceNumericUpDown";
+            this.TotalPriceNumericUpDown.ReadOnly = true;
+            this.TotalPriceNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.TotalPriceNumericUpDown.TabIndex = 2;
+            this.TotalPriceNumericUpDown.TabStop = false;
+            this.TotalPriceNumericUpDown.ThousandsSeparator = true;
+            // 
+            // FilterLabel
+            // 
+            this.FilterLabel.AutoSize = true;
+            this.FilterLabel.Location = new System.Drawing.Point(6, 288);
+            this.FilterLabel.Name = "FilterLabel";
+            this.FilterLabel.Size = new System.Drawing.Size(37, 13);
+            this.FilterLabel.TabIndex = 10;
+            this.FilterLabel.Text = "Bộ lọc";
+            // 
+            // AddServiceButton
+            // 
+            this.AddServiceButton.Location = new System.Drawing.Point(400, 335);
+            this.AddServiceButton.Name = "AddServiceButton";
+            this.AddServiceButton.Size = new System.Drawing.Size(89, 23);
+            this.AddServiceButton.TabIndex = 5;
+            this.AddServiceButton.Text = "Thêm dịch vụ";
+            this.AddServiceButton.UseVisualStyleBackColor = true;
+            this.AddServiceButton.Click += new System.EventHandler(this.AddServiceButton_Click);
+            // 
+            // ServiceCountNumericUpDown
+            // 
+            this.ServiceCountNumericUpDown.Location = new System.Drawing.Point(66, 338);
+            this.ServiceCountNumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.ServiceCountNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ServiceCountNumericUpDown.Name = "ServiceCountNumericUpDown";
+            this.ServiceCountNumericUpDown.Size = new System.Drawing.Size(38, 20);
+            this.ServiceCountNumericUpDown.TabIndex = 4;
+            this.ServiceCountNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // ServiceCountLabel
+            // 
+            this.ServiceCountLabel.AutoSize = true;
+            this.ServiceCountLabel.Location = new System.Drawing.Point(6, 340);
+            this.ServiceCountLabel.Name = "ServiceCountLabel";
+            this.ServiceCountLabel.Size = new System.Drawing.Size(49, 13);
+            this.ServiceCountLabel.TabIndex = 8;
+            this.ServiceCountLabel.Text = "Số lượng";
+            // 
+            // ServiceComboBox
+            // 
+            this.ServiceComboBox.FormattingEnabled = true;
+            this.ServiceComboBox.Location = new System.Drawing.Point(66, 311);
+            this.ServiceComboBox.Name = "ServiceComboBox";
+            this.ServiceComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ServiceComboBox.TabIndex = 3;
+            this.ServiceComboBox.SelectedIndexChanged += new System.EventHandler(this.ServiceComboBox_SelectedIndexChanged);
+            // 
+            // ServiceFilterTextbox
+            // 
+            this.ServiceFilterTextbox.Location = new System.Drawing.Point(66, 285);
+            this.ServiceFilterTextbox.Name = "ServiceFilterTextbox";
+            this.ServiceFilterTextbox.Size = new System.Drawing.Size(100, 20);
+            this.ServiceFilterTextbox.TabIndex = 2;
+            // 
+            // ServiceLabel
+            // 
+            this.ServiceLabel.AutoSize = true;
+            this.ServiceLabel.Location = new System.Drawing.Point(6, 314);
+            this.ServiceLabel.Name = "ServiceLabel";
+            this.ServiceLabel.Size = new System.Drawing.Size(44, 13);
+            this.ServiceLabel.TabIndex = 6;
+            this.ServiceLabel.Text = "Dịch vụ";
+            // 
+            // EmployeeGroupBox
+            // 
+            this.EmployeeGroupBox.Controls.Add(this.EmployeeFilterTextbox);
+            this.EmployeeGroupBox.Controls.Add(this.EmployeeLabel);
+            this.EmployeeGroupBox.Controls.Add(this.EmployeeComboBox);
+            this.EmployeeGroupBox.Controls.Add(this.EmployeeFilterLabel);
+            this.EmployeeGroupBox.Location = new System.Drawing.Point(527, 306);
+            this.EmployeeGroupBox.Name = "EmployeeGroupBox";
+            this.EmployeeGroupBox.Size = new System.Drawing.Size(200, 76);
+            this.EmployeeGroupBox.TabIndex = 2;
+            this.EmployeeGroupBox.TabStop = false;
+            this.EmployeeGroupBox.Text = "Thông tin nhân viên";
+            // 
+            // EmployeeFilterTextbox
+            // 
+            this.EmployeeFilterTextbox.Location = new System.Drawing.Point(68, 18);
+            this.EmployeeFilterTextbox.Name = "EmployeeFilterTextbox";
+            this.EmployeeFilterTextbox.Size = new System.Drawing.Size(100, 20);
+            this.EmployeeFilterTextbox.TabIndex = 13;
+            // 
+            // EmployeeLabel
+            // 
+            this.EmployeeLabel.AutoSize = true;
+            this.EmployeeLabel.Location = new System.Drawing.Point(6, 47);
+            this.EmployeeLabel.Name = "EmployeeLabel";
+            this.EmployeeLabel.Size = new System.Drawing.Size(56, 13);
+            this.EmployeeLabel.TabIndex = 10;
+            this.EmployeeLabel.Text = "Nhân viên";
+            // 
+            // EmployeeComboBox
+            // 
+            this.EmployeeComboBox.FormattingEnabled = true;
+            this.EmployeeComboBox.Location = new System.Drawing.Point(68, 44);
+            this.EmployeeComboBox.Name = "EmployeeComboBox";
+            this.EmployeeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.EmployeeComboBox.TabIndex = 14;
+            // 
+            // EmployeeFilterLabel
+            // 
+            this.EmployeeFilterLabel.AutoSize = true;
+            this.EmployeeFilterLabel.Location = new System.Drawing.Point(6, 21);
+            this.EmployeeFilterLabel.Name = "EmployeeFilterLabel";
+            this.EmployeeFilterLabel.Size = new System.Drawing.Size(37, 13);
+            this.EmployeeFilterLabel.TabIndex = 8;
+            this.EmployeeFilterLabel.Text = "Bộ lọc";
+            // 
+            // CustomerGroupBox
+            // 
+            this.CustomerGroupBox.Controls.Add(this.ResetCustomerButton);
+            this.CustomerGroupBox.Controls.Add(this.DeleteCustomerButton);
+            this.CustomerGroupBox.Controls.Add(this.SaveCustomerButton);
+            this.CustomerGroupBox.Controls.Add(this.CreateCustomerButton);
+            this.CustomerGroupBox.Controls.Add(this.CustomerFemaleButton);
+            this.CustomerGroupBox.Controls.Add(this.CustomerMaleButton);
+            this.CustomerGroupBox.Controls.Add(this.CustomerSexLabel);
+            this.CustomerGroupBox.Controls.Add(this.CustomerDateOfBirthLabel);
+            this.CustomerGroupBox.Controls.Add(this.CustomerRLIDTextBox);
+            this.CustomerGroupBox.Controls.Add(this.CustomerDateOfBirthPicker);
+            this.CustomerGroupBox.Controls.Add(this.CustomerFullNameTextBox);
+            this.CustomerGroupBox.Controls.Add(this.HorizontalLineLabel);
+            this.CustomerGroupBox.Controls.Add(this.CustomerFilterTextBox);
+            this.CustomerGroupBox.Controls.Add(this.CustomerLabel);
+            this.CustomerGroupBox.Controls.Add(this.CustomerComboBox);
+            this.CustomerGroupBox.Controls.Add(this.CustomerFilterLabel);
+            this.CustomerGroupBox.Controls.Add(this.CustomerRLIDLabel);
+            this.CustomerGroupBox.Controls.Add(this.CustomerFullNameLabel);
+            this.CustomerGroupBox.Location = new System.Drawing.Point(527, 77);
+            this.CustomerGroupBox.Name = "CustomerGroupBox";
+            this.CustomerGroupBox.Size = new System.Drawing.Size(214, 223);
+            this.CustomerGroupBox.TabIndex = 1;
+            this.CustomerGroupBox.TabStop = false;
+            this.CustomerGroupBox.Text = "Thông tin khách hàng";
+            // 
+            // CustomerFemaleButton
+            // 
+            this.CustomerFemaleButton.AutoSize = true;
+            this.CustomerFemaleButton.Location = new System.Drawing.Point(121, 141);
+            this.CustomerFemaleButton.Name = "CustomerFemaleButton";
+            this.CustomerFemaleButton.Size = new System.Drawing.Size(39, 17);
+            this.CustomerFemaleButton.TabIndex = 9;
+            this.CustomerFemaleButton.Text = "Nữ";
+            this.CustomerFemaleButton.UseVisualStyleBackColor = true;
+            // 
+            // CustomerMaleButton
+            // 
+            this.CustomerMaleButton.AutoSize = true;
+            this.CustomerMaleButton.Checked = true;
+            this.CustomerMaleButton.Location = new System.Drawing.Point(68, 141);
+            this.CustomerMaleButton.Name = "CustomerMaleButton";
+            this.CustomerMaleButton.Size = new System.Drawing.Size(47, 17);
+            this.CustomerMaleButton.TabIndex = 8;
+            this.CustomerMaleButton.TabStop = true;
+            this.CustomerMaleButton.Text = "Nam";
+            this.CustomerMaleButton.UseVisualStyleBackColor = true;
+            // 
+            // CustomerSexLabel
+            // 
+            this.CustomerSexLabel.AutoSize = true;
+            this.CustomerSexLabel.Location = new System.Drawing.Point(6, 143);
+            this.CustomerSexLabel.Name = "CustomerSexLabel";
+            this.CustomerSexLabel.Size = new System.Drawing.Size(47, 13);
+            this.CustomerSexLabel.TabIndex = 13;
+            this.CustomerSexLabel.Text = "Giới tính";
+            // 
+            // CustomerDateOfBirthLabel
+            // 
+            this.CustomerDateOfBirthLabel.AutoSize = true;
+            this.CustomerDateOfBirthLabel.Location = new System.Drawing.Point(6, 120);
+            this.CustomerDateOfBirthLabel.Name = "CustomerDateOfBirthLabel";
+            this.CustomerDateOfBirthLabel.Size = new System.Drawing.Size(54, 13);
+            this.CustomerDateOfBirthLabel.TabIndex = 12;
+            this.CustomerDateOfBirthLabel.Text = "Ngày sinh";
+            // 
+            // CustomerRLIDTextBox
+            // 
+            this.CustomerRLIDTextBox.Location = new System.Drawing.Point(68, 164);
+            this.CustomerRLIDTextBox.Name = "CustomerRLIDTextBox";
+            this.CustomerRLIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CustomerRLIDTextBox.TabIndex = 10;
+            // 
+            // CustomerDateOfBirthPicker
+            // 
+            this.CustomerDateOfBirthPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.CustomerDateOfBirthPicker.Location = new System.Drawing.Point(68, 116);
+            this.CustomerDateOfBirthPicker.Name = "CustomerDateOfBirthPicker";
+            this.CustomerDateOfBirthPicker.Size = new System.Drawing.Size(118, 20);
+            this.CustomerDateOfBirthPicker.TabIndex = 11;
+            this.CustomerDateOfBirthPicker.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            // 
+            // CustomerFullNameTextBox
+            // 
+            this.CustomerFullNameTextBox.Location = new System.Drawing.Point(68, 90);
+            this.CustomerFullNameTextBox.Name = "CustomerFullNameTextBox";
+            this.CustomerFullNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CustomerFullNameTextBox.TabIndex = 7;
+            // 
+            // HorizontalLineLabel
+            // 
+            this.HorizontalLineLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.HorizontalLineLabel.Location = new System.Drawing.Point(31, 77);
+            this.HorizontalLineLabel.Name = "HorizontalLineLabel";
+            this.HorizontalLineLabel.Size = new System.Drawing.Size(140, 2);
+            this.HorizontalLineLabel.TabIndex = 8;
+            // 
+            // CustomerFilterTextBox
+            // 
+            this.CustomerFilterTextBox.Location = new System.Drawing.Point(68, 19);
+            this.CustomerFilterTextBox.Name = "CustomerFilterTextBox";
+            this.CustomerFilterTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CustomerFilterTextBox.TabIndex = 5;
+            // 
+            // CustomerLabel
+            // 
+            this.CustomerLabel.AutoSize = true;
+            this.CustomerLabel.Location = new System.Drawing.Point(6, 48);
+            this.CustomerLabel.Name = "CustomerLabel";
+            this.CustomerLabel.Size = new System.Drawing.Size(38, 13);
+            this.CustomerLabel.TabIndex = 4;
+            this.CustomerLabel.Text = "Khách";
+            // 
+            // CustomerComboBox
+            // 
+            this.CustomerComboBox.FormattingEnabled = true;
+            this.CustomerComboBox.Location = new System.Drawing.Point(68, 45);
+            this.CustomerComboBox.Name = "CustomerComboBox";
+            this.CustomerComboBox.Size = new System.Drawing.Size(121, 21);
+            this.CustomerComboBox.TabIndex = 6;
+            this.CustomerComboBox.SelectedIndexChanged += new System.EventHandler(this.CustomerComboBox_SelectedIndexChanged);
+            // 
+            // CustomerFilterLabel
+            // 
+            this.CustomerFilterLabel.AutoSize = true;
+            this.CustomerFilterLabel.Location = new System.Drawing.Point(6, 22);
+            this.CustomerFilterLabel.Name = "CustomerFilterLabel";
+            this.CustomerFilterLabel.Size = new System.Drawing.Size(37, 13);
+            this.CustomerFilterLabel.TabIndex = 2;
+            this.CustomerFilterLabel.Text = "Bộ lọc";
+            // 
+            // CustomerRLIDLabel
+            // 
+            this.CustomerRLIDLabel.AutoSize = true;
+            this.CustomerRLIDLabel.Location = new System.Drawing.Point(6, 167);
+            this.CustomerRLIDLabel.Name = "CustomerRLIDLabel";
+            this.CustomerRLIDLabel.Size = new System.Drawing.Size(39, 13);
+            this.CustomerRLIDLabel.TabIndex = 1;
+            this.CustomerRLIDLabel.Text = "CMND";
+            // 
+            // CustomerFullNameLabel
+            // 
+            this.CustomerFullNameLabel.AutoSize = true;
+            this.CustomerFullNameLabel.Location = new System.Drawing.Point(6, 93);
+            this.CustomerFullNameLabel.Name = "CustomerFullNameLabel";
+            this.CustomerFullNameLabel.Size = new System.Drawing.Size(39, 13);
+            this.CustomerFullNameLabel.TabIndex = 0;
+            this.CustomerFullNameLabel.Text = "Họ tên";
+            // 
+            // BillManipulatingGroupBox
+            // 
+            this.BillManipulatingGroupBox.Controls.Add(this.ResetBillButton);
+            this.BillManipulatingGroupBox.Controls.Add(this.DeleteBillButton);
+            this.BillManipulatingGroupBox.Controls.Add(this.SaveBillButton);
+            this.BillManipulatingGroupBox.Controls.Add(this.NewBillButton);
+            this.BillManipulatingGroupBox.Controls.Add(this.ExportBillButton);
+            this.BillManipulatingGroupBox.Location = new System.Drawing.Point(527, 388);
+            this.BillManipulatingGroupBox.Name = "BillManipulatingGroupBox";
+            this.BillManipulatingGroupBox.Size = new System.Drawing.Size(267, 57);
+            this.BillManipulatingGroupBox.TabIndex = 3;
+            this.BillManipulatingGroupBox.TabStop = false;
+            this.BillManipulatingGroupBox.Text = "Chức năng với hóa đơn";
+            // 
+            // ResetBillButton
+            // 
+            this.ResetBillButton.Location = new System.Drawing.Point(8, 24);
+            this.ResetBillButton.Name = "ResetBillButton";
+            this.ResetBillButton.Size = new System.Drawing.Size(45, 23);
+            this.ResetBillButton.TabIndex = 18;
+            this.ResetBillButton.Text = "Đặt lại";
+            this.ResetBillButton.UseVisualStyleBackColor = true;
+            // 
+            // DeleteBillButton
+            // 
+            this.DeleteBillButton.Enabled = false;
+            this.DeleteBillButton.Location = new System.Drawing.Point(165, 24);
+            this.DeleteBillButton.Name = "DeleteBillButton";
+            this.DeleteBillButton.Size = new System.Drawing.Size(39, 23);
+            this.DeleteBillButton.TabIndex = 21;
+            this.DeleteBillButton.Text = "Xóa";
+            this.DeleteBillButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveBillButton
+            // 
+            this.SaveBillButton.Enabled = false;
+            this.SaveBillButton.Location = new System.Drawing.Point(121, 24);
+            this.SaveBillButton.Name = "SaveBillButton";
+            this.SaveBillButton.Size = new System.Drawing.Size(38, 23);
+            this.SaveBillButton.TabIndex = 20;
+            this.SaveBillButton.Text = "Lưu";
+            this.SaveBillButton.UseVisualStyleBackColor = true;
+            // 
+            // NewBillButton
+            // 
+            this.NewBillButton.Location = new System.Drawing.Point(59, 24);
+            this.NewBillButton.Name = "NewBillButton";
+            this.NewBillButton.Size = new System.Drawing.Size(56, 23);
+            this.NewBillButton.TabIndex = 19;
+            this.NewBillButton.Text = "Tạo mới";
+            this.NewBillButton.UseVisualStyleBackColor = true;
+            // 
+            // ExportBillButton
+            // 
+            this.ExportBillButton.Location = new System.Drawing.Point(210, 24);
+            this.ExportBillButton.Name = "ExportBillButton";
+            this.ExportBillButton.Size = new System.Drawing.Size(49, 23);
+            this.ExportBillButton.TabIndex = 17;
+            this.ExportBillButton.Text = "Xuất";
+            this.ExportBillButton.UseVisualStyleBackColor = true;
+            // 
+            // ResetCustomerButton
+            // 
+            this.ResetCustomerButton.Location = new System.Drawing.Point(7, 194);
+            this.ResetCustomerButton.Name = "ResetCustomerButton";
+            this.ResetCustomerButton.Size = new System.Drawing.Size(46, 23);
+            this.ResetCustomerButton.TabIndex = 22;
+            this.ResetCustomerButton.Text = "Đặt lại";
+            this.ResetCustomerButton.UseVisualStyleBackColor = true;
+            // 
+            // DeleteCustomerButton
+            // 
+            this.DeleteCustomerButton.Enabled = false;
+            this.DeleteCustomerButton.Location = new System.Drawing.Point(165, 194);
+            this.DeleteCustomerButton.Name = "DeleteCustomerButton";
+            this.DeleteCustomerButton.Size = new System.Drawing.Size(39, 23);
+            this.DeleteCustomerButton.TabIndex = 25;
+            this.DeleteCustomerButton.Text = "Xóa";
+            this.DeleteCustomerButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveCustomerButton
+            // 
+            this.SaveCustomerButton.Enabled = false;
+            this.SaveCustomerButton.Location = new System.Drawing.Point(121, 194);
+            this.SaveCustomerButton.Name = "SaveCustomerButton";
+            this.SaveCustomerButton.Size = new System.Drawing.Size(38, 23);
+            this.SaveCustomerButton.TabIndex = 24;
+            this.SaveCustomerButton.Text = "Lưu";
+            this.SaveCustomerButton.UseVisualStyleBackColor = true;
+            // 
+            // CreateCustomerButton
+            // 
+            this.CreateCustomerButton.Location = new System.Drawing.Point(59, 194);
+            this.CreateCustomerButton.Name = "CreateCustomerButton";
+            this.CreateCustomerButton.Size = new System.Drawing.Size(56, 23);
+            this.CreateCustomerButton.TabIndex = 23;
+            this.CreateCustomerButton.Text = "Tạo mới";
+            this.CreateCustomerButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 461);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(809, 458);
+            this.Controls.Add(this.BillManipulatingGroupBox);
+            this.Controls.Add(this.CustomerGroupBox);
+            this.Controls.Add(this.EmployeeGroupBox);
+            this.Controls.Add(this.ServiceListGroupBox);
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.MainFormMenuStrip);
             this.MainMenuStrip = this.MainFormMenuStrip;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.MainFormMenuStrip.ResumeLayout(false);
             this.MainFormMenuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceListGridView)).EndInit();
+            this.ServiceListGroupBox.ResumeLayout(false);
+            this.ServiceListGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicePriceNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalPriceNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceCountNumericUpDown)).EndInit();
+            this.EmployeeGroupBox.ResumeLayout(false);
+            this.EmployeeGroupBox.PerformLayout();
+            this.CustomerGroupBox.ResumeLayout(false);
+            this.CustomerGroupBox.PerformLayout();
+            this.BillManipulatingGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,51 +757,57 @@
         private System.Windows.Forms.ToolStripMenuItem incomeStatisticToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView ServiceListGridView;
+        private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.GroupBox ServiceListGroupBox;
+        private System.Windows.Forms.Button AddServiceButton;
+        private System.Windows.Forms.TextBox ServiceFilterTextbox;
+        private System.Windows.Forms.Label ServiceLabel;
+        private System.Windows.Forms.ComboBox ServiceComboBox;
+        private System.Windows.Forms.NumericUpDown ServiceCountNumericUpDown;
+        private System.Windows.Forms.Label ServiceCountLabel;
+        private System.Windows.Forms.Label FilterLabel;
+        private System.Windows.Forms.GroupBox EmployeeGroupBox;
+        private System.Windows.Forms.GroupBox CustomerGroupBox;
+        private System.Windows.Forms.TextBox CustomerFullNameTextBox;
+        private System.Windows.Forms.Label HorizontalLineLabel;
+        private System.Windows.Forms.TextBox CustomerFilterTextBox;
+        private System.Windows.Forms.Label CustomerLabel;
+        private System.Windows.Forms.ComboBox CustomerComboBox;
+        private System.Windows.Forms.Label CustomerFilterLabel;
+        private System.Windows.Forms.Label CustomerRLIDLabel;
+        private System.Windows.Forms.Label CustomerFullNameLabel;
+        private System.Windows.Forms.DateTimePicker CustomerDateOfBirthPicker;
+        private System.Windows.Forms.TextBox CustomerRLIDTextBox;
+        private System.Windows.Forms.Label CustomerDateOfBirthLabel;
+        private System.Windows.Forms.RadioButton CustomerFemaleButton;
+        private System.Windows.Forms.RadioButton CustomerMaleButton;
+        private System.Windows.Forms.Label CustomerSexLabel;
+        private System.Windows.Forms.TextBox EmployeeFilterTextbox;
+        private System.Windows.Forms.Label EmployeeLabel;
+        private System.Windows.Forms.ComboBox EmployeeComboBox;
+        private System.Windows.Forms.Label EmployeeFilterLabel;
+        private System.Windows.Forms.GroupBox BillManipulatingGroupBox;
         private System.Windows.Forms.ToolStripMenuItem manageBillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ExportBillButton;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageCustomerToolStripMenuItem;
+        private System.Windows.Forms.Button ResetBillButton;
+        private System.Windows.Forms.Button DeleteBillButton;
+        private System.Windows.Forms.Button SaveBillButton;
+        private System.Windows.Forms.Button NewBillButton;
+        private System.Windows.Forms.Label TotalPriceLabel;
+        private System.Windows.Forms.NumericUpDown TotalPriceNumericUpDown;
+        private System.Windows.Forms.Button RemoveServiceButton;
+        private System.Windows.Forms.Button SaveServiceButton;
+        private System.Windows.Forms.NumericUpDown ServicePriceNumericUpDown;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ResetCustomerButton;
+        private System.Windows.Forms.Button DeleteCustomerButton;
+        private System.Windows.Forms.Button SaveCustomerButton;
+        private System.Windows.Forms.Button CreateCustomerButton;
     }
 }

@@ -25,6 +25,7 @@ namespace HotelManagement
     {
         public Customer Customer_ { get; set; }
         public Employee Employee_ { get; set; }
+        public int TotalPrice { get; set; }
     }
 
     public class BillDetail
