@@ -67,6 +67,13 @@ namespace HotelManagement
             return list;
         }
 
+        public static List<BillDetail> GetBillDetails(int billId)
+        {
+            return connection.Query<BillDetail>(
+                @"select Id, BillId, ServiceId, Count from BillDetails
+                where BillId = @billId", new { billId }).AsList();
+        }
+
         public static int TotalPriceOfBill(int billId)
         {
             return connection.ExecuteScalar<int>(
@@ -76,6 +83,17 @@ namespace HotelManagement
                 new { billId });
         }
         
+        public static BillDisplay BillModelToBillDisplay(BillModel bill)
+        {
+            return new BillDisplay()
+            {
+                Id = bill.Id,
+                Customer_ = LazyWorker<Customer>.Get(bill.CustomerId != null ? bill.CustomerId.Value : 0),
+                Employee_ = LazyWorker<Employee>.Get(bill.EmployeeId != null ? bill.EmployeeId.Value : 0),
+                CreatingDay = bill.CreatingDay
+            };
+        }
+
         public static List<BillDisplay> GetAllBills()
         {
             List<BillDisplay> bills = new List<BillDisplay>();
@@ -110,6 +128,23 @@ namespace HotelManagement
                 table.Columns[columnName].SetOrdinal(columnIndex);
                 columnIndex++;
             }
+        }
+
+        public static object ChangeType(object value, Type conversion)
+        {
+            var t = conversion;
+
+            if (t.IsGenericType
+                && t.GetGenericTypeDefinition().Equals(typeof(Nullable<>)))
+            {
+                if (value == null)
+                {
+                    return null;
+                }
+                t = Nullable.GetUnderlyingType(t);
+            }
+
+            return Convert.ChangeType(value, t);
         }
     }
 }

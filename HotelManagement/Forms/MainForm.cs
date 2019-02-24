@@ -16,10 +16,10 @@ namespace HotelManagement
         public MainForm()
         {
             InitializeComponent();
+            SetCurrentBill(new BillDisplay());
         }
 
         Employee e;
-        BillDisplay selectedBill;
 
         public void SetCurrentEmployee(Employee e)
         {
@@ -27,59 +27,19 @@ namespace HotelManagement
             if (!e.IsAdmin)
                 manageEmployeeToolStripMenuItem.Enabled = false;
         }
-
-        public void SetCurrentBill(BillDisplay bill)
-        {
-            selectedBill = bill;
-            //TotalPriceNumericUpDown.Value = bill.TotalPrice;
-
-            LoadAllServices();
-            LoadAllCustomers();
-            LoadAllEmployees();
-
-            CustomerComboBox.SelectedValue = bill.Customer_.Id;
-            EmployeeComboBox.SelectedValue = bill.Employee_.Id;
-        }
-    
+        
         private void LoadAllServices()
         {
-            LazyWorker<ServiceMapped>.LoadAllToGridView
-            (
-                ServiceListGridView,
-                new string[] 
-                {
-                    "Id", "ServiceName", "Price", "RoomId",
-                    "BelongToRoom", "Count", "BillId"
-                },
-                LessLazyWorker.GetMappedServiceByBill(selectedBill.Id)
-            );
-
-            ServiceListGridView.Columns["Id"].Visible = false;
-            ServiceListGridView.Columns["RoomId"].Visible = false;
-            ServiceListGridView.Columns["BillId"].Visible = false;
-            ServiceListGridView.Columns["Filter"].Visible = false;
-            ServiceListGridView.Columns["BillDetailId"].Visible = false;
-
-            ServiceListGridView.Columns["ServiceName"].HeaderText = "Tên dịch vụ";
-            ServiceListGridView.Columns["Price"].HeaderText = "Giá";
-            ServiceListGridView.Columns["Count"].HeaderText = "Số lượng";
-            ServiceListGridView.Columns["BelongToRoom"].HeaderText = "Thuộc về phòng";
-
-            ServiceListGridView.Columns["ServiceName"].Width = 150;
-            ServiceListGridView.Columns["Price"].DefaultCellStyle.Format = "### ### ### ###";
-            ServiceListGridView.Columns["Price"].AutoSizeMode
-                = DataGridViewAutoSizeColumnMode.AllCells;
-            ServiceListGridView.Columns["Count"].Width = 100;
-            ServiceListGridView.Columns["BelongToRoom"].AutoSizeMode 
-                = DataGridViewAutoSizeColumnMode.AllCells;
-
             //
-            ServiceComboBox.DataSource = LessLazyWorker.GetAllServices();
+            var list = LessLazyWorker.GetAllServices();
+            list.Insert(0, new ServiceDisplay());
+            ServiceComboBox.DataSource = list;
+
             ServiceComboBox.ValueMember = "Id";
             ServiceComboBox.DisplayMember = "DisplayString";
 
             TotalPriceNumericUpDown.Value 
-                = LessLazyWorker.TotalPriceOfBill(selectedBill.Id);
+                = LessLazyWorker.TotalPriceOfBill(currentBill.Id);
         }
 
         private void LoadAllCustomers()
@@ -94,22 +54,19 @@ namespace HotelManagement
 
         private void LoadAllEmployees()
         {
-            EmployeeComboBox.DataSource = LazyWorker<Employee>.GetAll();
+            var list = LazyWorker<Employee>.GetAll();
+            list.Insert(0, new Employee());
+
+            EmployeeComboBox.DataSource = list;
             EmployeeComboBox.DisplayMember = "Username";
             EmployeeComboBox.ValueMember = "Id";
-
-            //EmployeeComboBox.Items.Insert(0, new Employee());
         }
 
         private void manageEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new EmployeeManageForm().Show();
         }
-
-        private void manageRoomToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -207,19 +164,9 @@ namespace HotelManagement
             };
 
             ServiceComboBox.SelectedValue = selectedService.Id;
+            ServiceCountNumericUpDown.Value = selectedService.Count;
         }
-
-        private BillDetail FilledDataToBillDetail()
-        {
-            return new BillDetail()
-            {
-                Id = selectedService.BillDetailId,
-                ServiceId = Convert.ToInt32(ServiceComboBox.SelectedValue),
-                Count = Convert.ToInt32(ServiceCountNumericUpDown.Value),
-                BillId = selectedBill.Id
-            };
-        }
-
+        
         private void ServiceListGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             LazyWorker<ServiceMapped>.LoadOneFromGridView
@@ -233,9 +180,14 @@ namespace HotelManagement
 
         private void SaveServiceButton_Click(object sender, EventArgs e)
         {
-            if(LazyWorker<BillDetail>.Update(FilledDataToBillDetail()))
+            if (currentBill.Id == 0 || ServiceComboBox.SelectedIndex == 0)
             {
-                LoadAllServices();
+                FormUtilities.NotifyFailure();
+                return;
+            }
+            if (LazyWorker<BillDetail>.Update(FilledDataToBillDetail()))
+            {
+                LoadBillsServices();
                 FormUtilities.NotifySuccess();
             }
             else
@@ -246,9 +198,14 @@ namespace HotelManagement
 
         private void AddServiceButton_Click(object sender, EventArgs e)
         {
+            if(currentBill.Id == 0 || ServiceComboBox.SelectedIndex == 0)
+            {
+                FormUtilities.NotifyFailure();
+                return;
+            }
             if (LazyWorker<BillDetail>.Insert(FilledDataToBillDetail()) > 0)
             {
-                LoadAllServices();
+                LoadBillsServices();
                 FormUtilities.NotifySuccess();
             }
             else
@@ -259,9 +216,14 @@ namespace HotelManagement
 
         private void RemoveServiceButton_Click(object sender, EventArgs e)
         {
+            if(currentBill.Id == 0)
+            {
+                FormUtilities.NotifyFailure();
+                return;
+            }
             if (LazyWorker<BillDetail>.Delete(FilledDataToBillDetail()))
             {
-                LoadAllServices();
+                LoadBillsServices();
                 FormUtilities.NotifySuccess();
             }
             else
@@ -275,5 +237,11 @@ namespace HotelManagement
             ServiceDisplay service = ServiceComboBox.SelectedItem as ServiceDisplay;
             ServicePriceNumericUpDown.Value = service.Price;
         }
+
+        private void ResetCustomerButton_Click(object sender, EventArgs e)
+        {
+            CustomerComboBox.SelectedIndex = 0;
+        }
+
     }
 }

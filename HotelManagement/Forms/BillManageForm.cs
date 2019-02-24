@@ -36,8 +36,8 @@ namespace HotelManagement
             foreach(DataRow row in table.Rows)
             {
                 BillDisplay bill = LazyWorker<BillDisplay>.DataRowToObject(row);
-                row["Customer"] = bill.Customer_.FullName;
-                row["Employee"] = bill.Employee_.Username;
+                row["Customer"] = bill.Customer_ != null ? bill.Customer_.FullName : "";
+                row["Employee"] = bill.Employee_ != null ? bill.Employee_.FullName : "";
             }
 
             BillGridView.DataSource = table;

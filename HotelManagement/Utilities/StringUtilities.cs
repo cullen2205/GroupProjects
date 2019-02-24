@@ -28,5 +28,10 @@ namespace HotelManagement
         {
             return Regex.IsMatch(input, numberPattern);
         }
+
+        public static string LazyFormat(int i)
+        {
+            return string.Format("{0:n0}", i);
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +66,10 @@
             this.EmployeeComboBox = new System.Windows.Forms.ComboBox();
             this.EmployeeFilterLabel = new System.Windows.Forms.Label();
             this.CustomerGroupBox = new System.Windows.Forms.GroupBox();
+            this.ResetCustomerButton = new System.Windows.Forms.Button();
+            this.DeleteCustomerButton = new System.Windows.Forms.Button();
+            this.SaveCustomerButton = new System.Windows.Forms.Button();
+            this.CreateCustomerButton = new System.Windows.Forms.Button();
             this.CustomerFemaleButton = new System.Windows.Forms.RadioButton();
             this.CustomerMaleButton = new System.Windows.Forms.RadioButton();
             this.CustomerSexLabel = new System.Windows.Forms.Label();
@@ -85,10 +90,7 @@
             this.SaveBillButton = new System.Windows.Forms.Button();
             this.NewBillButton = new System.Windows.Forms.Button();
             this.ExportBillButton = new System.Windows.Forms.Button();
-            this.ResetCustomerButton = new System.Windows.Forms.Button();
-            this.DeleteCustomerButton = new System.Windows.Forms.Button();
-            this.SaveCustomerButton = new System.Windows.Forms.Button();
-            this.CreateCustomerButton = new System.Windows.Forms.Button();
+            this.BillPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.MainFormMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceListGridView)).BeginInit();
             this.ServiceListGroupBox.SuspendLayout();
@@ -490,6 +492,45 @@
             this.CustomerGroupBox.TabStop = false;
             this.CustomerGroupBox.Text = "Thông tin khách hàng";
             // 
+            // ResetCustomerButton
+            // 
+            this.ResetCustomerButton.Location = new System.Drawing.Point(7, 194);
+            this.ResetCustomerButton.Name = "ResetCustomerButton";
+            this.ResetCustomerButton.Size = new System.Drawing.Size(46, 23);
+            this.ResetCustomerButton.TabIndex = 22;
+            this.ResetCustomerButton.Text = "Đặt lại";
+            this.ResetCustomerButton.UseVisualStyleBackColor = true;
+            this.ResetCustomerButton.Click += new System.EventHandler(this.ResetCustomerButton_Click);
+            // 
+            // DeleteCustomerButton
+            // 
+            this.DeleteCustomerButton.Enabled = false;
+            this.DeleteCustomerButton.Location = new System.Drawing.Point(165, 194);
+            this.DeleteCustomerButton.Name = "DeleteCustomerButton";
+            this.DeleteCustomerButton.Size = new System.Drawing.Size(39, 23);
+            this.DeleteCustomerButton.TabIndex = 25;
+            this.DeleteCustomerButton.Text = "Xóa";
+            this.DeleteCustomerButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveCustomerButton
+            // 
+            this.SaveCustomerButton.Enabled = false;
+            this.SaveCustomerButton.Location = new System.Drawing.Point(121, 194);
+            this.SaveCustomerButton.Name = "SaveCustomerButton";
+            this.SaveCustomerButton.Size = new System.Drawing.Size(38, 23);
+            this.SaveCustomerButton.TabIndex = 24;
+            this.SaveCustomerButton.Text = "Lưu";
+            this.SaveCustomerButton.UseVisualStyleBackColor = true;
+            // 
+            // CreateCustomerButton
+            // 
+            this.CreateCustomerButton.Location = new System.Drawing.Point(59, 194);
+            this.CreateCustomerButton.Name = "CreateCustomerButton";
+            this.CreateCustomerButton.Size = new System.Drawing.Size(56, 23);
+            this.CreateCustomerButton.TabIndex = 23;
+            this.CreateCustomerButton.Text = "Tạo mới";
+            this.CreateCustomerButton.UseVisualStyleBackColor = true;
+            // 
             // CustomerFemaleButton
             // 
             this.CustomerFemaleButton.AutoSize = true;
@@ -635,6 +676,7 @@
             this.ResetBillButton.TabIndex = 18;
             this.ResetBillButton.Text = "Đặt lại";
             this.ResetBillButton.UseVisualStyleBackColor = true;
+            this.ResetBillButton.Click += new System.EventHandler(this.ResetBillButton_Click);
             // 
             // DeleteBillButton
             // 
@@ -645,6 +687,7 @@
             this.DeleteBillButton.TabIndex = 21;
             this.DeleteBillButton.Text = "Xóa";
             this.DeleteBillButton.UseVisualStyleBackColor = true;
+            this.DeleteBillButton.Click += new System.EventHandler(this.DeleteBillButton_Click);
             // 
             // SaveBillButton
             // 
@@ -655,6 +698,7 @@
             this.SaveBillButton.TabIndex = 20;
             this.SaveBillButton.Text = "Lưu";
             this.SaveBillButton.UseVisualStyleBackColor = true;
+            this.SaveBillButton.Click += new System.EventHandler(this.SaveBillButton_Click);
             // 
             // NewBillButton
             // 
@@ -664,6 +708,7 @@
             this.NewBillButton.TabIndex = 19;
             this.NewBillButton.Text = "Tạo mới";
             this.NewBillButton.UseVisualStyleBackColor = true;
+            this.NewBillButton.Click += new System.EventHandler(this.NewBillButton_Click);
             // 
             // ExportBillButton
             // 
@@ -673,44 +718,17 @@
             this.ExportBillButton.TabIndex = 17;
             this.ExportBillButton.Text = "Xuất";
             this.ExportBillButton.UseVisualStyleBackColor = true;
+            this.ExportBillButton.Click += new System.EventHandler(this.ExportBillButton_Click);
             // 
-            // ResetCustomerButton
+            // BillPrintPreviewDialog
             // 
-            this.ResetCustomerButton.Location = new System.Drawing.Point(7, 194);
-            this.ResetCustomerButton.Name = "ResetCustomerButton";
-            this.ResetCustomerButton.Size = new System.Drawing.Size(46, 23);
-            this.ResetCustomerButton.TabIndex = 22;
-            this.ResetCustomerButton.Text = "Đặt lại";
-            this.ResetCustomerButton.UseVisualStyleBackColor = true;
-            // 
-            // DeleteCustomerButton
-            // 
-            this.DeleteCustomerButton.Enabled = false;
-            this.DeleteCustomerButton.Location = new System.Drawing.Point(165, 194);
-            this.DeleteCustomerButton.Name = "DeleteCustomerButton";
-            this.DeleteCustomerButton.Size = new System.Drawing.Size(39, 23);
-            this.DeleteCustomerButton.TabIndex = 25;
-            this.DeleteCustomerButton.Text = "Xóa";
-            this.DeleteCustomerButton.UseVisualStyleBackColor = true;
-            // 
-            // SaveCustomerButton
-            // 
-            this.SaveCustomerButton.Enabled = false;
-            this.SaveCustomerButton.Location = new System.Drawing.Point(121, 194);
-            this.SaveCustomerButton.Name = "SaveCustomerButton";
-            this.SaveCustomerButton.Size = new System.Drawing.Size(38, 23);
-            this.SaveCustomerButton.TabIndex = 24;
-            this.SaveCustomerButton.Text = "Lưu";
-            this.SaveCustomerButton.UseVisualStyleBackColor = true;
-            // 
-            // CreateCustomerButton
-            // 
-            this.CreateCustomerButton.Location = new System.Drawing.Point(59, 194);
-            this.CreateCustomerButton.Name = "CreateCustomerButton";
-            this.CreateCustomerButton.Size = new System.Drawing.Size(56, 23);
-            this.CreateCustomerButton.TabIndex = 23;
-            this.CreateCustomerButton.Text = "Tạo mới";
-            this.CreateCustomerButton.UseVisualStyleBackColor = true;
+            this.BillPrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.BillPrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.BillPrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.BillPrintPreviewDialog.Enabled = true;
+            this.BillPrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("BillPrintPreviewDialog.Icon")));
+            this.BillPrintPreviewDialog.Name = "BillPrintPreviewDialog";
+            this.BillPrintPreviewDialog.Visible = false;
             // 
             // MainForm
             // 
@@ -809,5 +827,6 @@
         private System.Windows.Forms.Button DeleteCustomerButton;
         private System.Windows.Forms.Button SaveCustomerButton;
         private System.Windows.Forms.Button CreateCustomerButton;
+        private System.Windows.Forms.PrintPreviewDialog BillPrintPreviewDialog;
     }
 }

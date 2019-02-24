@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dapper.Contrib.Extensions;
+using Dapper;
 using FastMember;
 
 namespace HotelManagement
@@ -38,7 +39,8 @@ namespace HotelManagement
 
         public static T Get(int Id)
         {
-            return connection.Get<T>(Id);
+            T t = connection.Get<T>(Id);
+            return t ?? new T();
         }
 
         //DataTable is a good class to be used as DataGridView's DataSource
